@@ -1,11 +1,10 @@
 <!-- input fields - combo box = things to type and dropdowns but input fields -->
 
-<h3>Student Names</h3>
-<input type="text" placeholder="Search Students" title="Type the usernames of students you want to filter" /> <!-- self closing tag - means doesnt have a body (everything inbetween opening and closing tags) - no "<> <>"-->
+ <!-- self closing tag - means doesnt have a body (everything inbetween opening and closing tags) - no "<> <>"-->
 <!-- title makes it so that you can hover so that you can see a blurb - title is something that is attribute over all elements - placeholder is specific for input field-->
 
-<h3>Assignment Names</h3>
-<input /> <!-- by default input fields accept any type of content - multiple different types of input fields - could also be like email, color, number, telephone, etc. - on phones it would pop up the correct keyboard corresponding --> <
+<!-- <h3>Assignment Names</h3>
+<input /> by default input fields accept any type of content - multiple different types of input fields - could also be like email, color, number, telephone, etc. - on phones it would pop up the correct keyboard corresponding -->
 
 
 <table width="100%" border="1">
@@ -14,25 +13,49 @@
             <th> <!-- TH means theading which bolds it --> <!-- if columns dont fit and dont want to scroll entire screen, you'd want to scroll just table not entire screen - goes to responsive design - do with css-->
                 Student Name
             </th>
+            <th>
+                A1 - HTML
+            </th>
+            <th>
+                A2 - CSS
+            </th>
+            <th>
+                A3 - JS
+            </th>
+            <th>
+                A4 - HTML+CSS+JS
+            </th>
         </tr>
-        <th>
-            A1 - HTML
-        </th>
-        <th>
-            A2 - CSS
-        </th>
-        <th>
-            A3 - JS
-        </th>
-        <th>
-            A3 - JS
-        </th>
     </thead> <!-- this is where put headers at top of table - usually only 1 row but can have multiple-->
     <tbody>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <tr>
+            <td><a href="#">John Dever</a></td>
+            <td>100</td>
+            <td><input min="0" max="100" type="number" value="50" /></td>
+            <td>100</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td><a href="#">Jane Doe</a></td>
+            <td><input min="0" max="100" type="number" value="84" /></td>
+            <td>75</td>
+            <td>85</td>
+        </tr>
+        <tr>
+            <td><a href="#">Luke Po</a></td>
+            <td>98</td>
+            <td>76</td>
+            <td><input min="0" max="100" type="number" value="100" /></td>
+            <td>97</td>
+        </tr>
+        
+        <tr>
+            <td><a href="#">Oliver Twist</a></td>
+            <td>89</td>
+            <td>93</td>
+            <td>92</td>
+            <td><input min="0" max="100" type="number" value="96" /></td>
+        </tr>
     </tbody> <!-- where have actual data usually-->
     <tfoot></tfoot> <!-- usually where put like averages or something-->
 </table>
