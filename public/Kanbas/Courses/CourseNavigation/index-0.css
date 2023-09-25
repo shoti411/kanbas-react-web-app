@@ -1,0 +1,24 @@
+.list-group-item {
+    border: none;
+}
+
+ul.course-navigation.list-group {
+    border-radius: 0px;
+}
+
+ul.wd-course-navigation .list-group-item.active {
+    color: black;
+    background-color: white;
+    border: none;
+    border-left: 2px solid black;
+}
+
+ul.wd-course-navigation a {
+    color: red;
+    text-decoration: none;
+}
+
+ul.wd-course-navigation.active a {
+    color: black;
+
+}

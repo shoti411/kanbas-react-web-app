@@ -1,0 +1,25 @@
+
+.wd-course-navigation {
+    background-color: aqua;
+    width: 120px;
+    padding: 0px;
+    margin-left: 20px;
+}
+
+/*list items here*/
+.wd-course-navigation li {
+    list-style-type: none;
+    margin-bottom: 20px;
+    border-left: 1px black solid;
+    padding-left: 10px;
+    
+}
+
+/* These would be the hyperlinks
+
+active is used for li's
+*/
+.wd-course-navigation-li a { 
+    color: red;
+    text-decoration: none;
+}
