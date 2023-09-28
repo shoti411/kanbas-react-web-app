@@ -190,3 +190,26 @@
         </tr> <!-- this is closing element-->
     </tbody>
 </table>
+
+<!-- This html doc - can convert this into course navigation js fle - can convert everything to string and stuff too and export it - can remove course navigator and instead import my course navigator and call it-->
+<!--import home from "" -->
+
+<div id="root">
+
+    <!-- ${CourseNavigation("")}
+    
+    
+    ${
+        links
+        .map(link)
+        
+    }-->
+
+</div>
+
+<script type="module">
+    import home from "./home.js";
+    const root = document.getElementById("root");
+    //const home = new home();
+    root.innerHTML = home();
+</script>

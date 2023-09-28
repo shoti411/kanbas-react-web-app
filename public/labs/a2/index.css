@@ -245,6 +245,25 @@ p#id-selector-2 {
 }
 
 
+/* 3.2.4.7 Overriding Bootstrap Styles (Exercise 6.3 in textbook) */
+.btn-primary.override-bs {
+
+   background-color: #a90dfd;
+
+   border-color: #fd0d51;
+
+   border-width: 10px;
+
+   border-radius: 20px;
+
+   border-style: dashed;
+
+   font-size: 2em;
+
+   font-weight: bolder;
+
+}
+
 
 /* If percentage goes over 100%, then will start to just wrap around */
 .wd-col-20pc {
