@@ -264,19 +264,3 @@ p#id-selector-2 {
 
 }
 
-
-/* If percentage goes over 100%, then will start to just wrap around */
-.wd-col-20pc {
-    float: left;
-    width: 20%;
-}
-
-/* still kind of misusing float - better way is of using flexbox/flexible box - designed for this purpose - works with divs and allows you to define container div which is parent or container of other divs inside of it - apply flex on parent and then all of children display horizontally 
-
-by default all divs behave ike block elements
-
-you can override display to be flex - by changing display: flex
-
-bootstrap has classes which alread does this
-
-*/
