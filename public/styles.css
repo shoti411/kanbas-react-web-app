@@ -1,0 +1,15 @@
+/* General styles for Kanbas */
+
+.wd-flex-row-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.wd-flex-grow-1 {
+    flex-grow: 1;
+}
+
+.body {
+    font-family: Arial, Helvetica, sans-serif; /* maybe declare this in something higher like in a public/styles.css*/
+    font-size: 0.8em; /* em is measure of size that is relative to normal size */
+}

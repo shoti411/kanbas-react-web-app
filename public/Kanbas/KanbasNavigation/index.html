@@ -1,30 +1,111 @@
-<ul>
-    <li>
-        <a href="/Kanbas/Account/Profile/index.html">Account</a>
-    </li>
-    <li>
-        <a href="#">Dashboard</a>
-    </li>
-    <li>
-        <a href="/Kanbas/Courses/Home/index.html">Courses</a>
-    </li>
-    <li>
-        <a href="#">Calendar</a>
-    </li>
-    <li>
-        <a href="#">Inbox</a>
-    </li>
-    <li>
-        <a href="#">History</a>
-    </li>
-    <li>
-        <a href="#">Studio</a>
-    </li>
-    <li>
-        <a href="#">Commons</a>
-    </li>
-    <li>
-        <a href="#">Help</a>
-    </li>
-</ul>
+<link rel="stylesheet" href="/vendors/bootstrap/css/bootstrap.min.css" />
+<!-- <link href="/vendors/fontawesome/css/all.min.css" rel="stylesheet" /> -->
+<script src="https://kit.fontawesome.com/a833cd2012.js" crossorigin="anonymous"></script> <!-- Hopefully installs fontawesome kit for icons because icons for some reason do not work???-->
+<link rel="stylesheet" href="/styles.css" />
+<link rel="stylesheet" href="index.css" />
+
+
+
+<div class="flex-column mb-auto text-center d-flex flex-column flex-shrink-0 wd-kanbas-navigation"> <!-- Kanbas Navigation Container -->
+    <div class="wd-logomark-container">
+        <a href="https://northeastern.instructure.com/"></a>
+    </div>
+    <div>
+        <ul class="nav nav-pills nav-flush flex-column mb-auto text-center wd-kanbas-navigation">
+            <li class="nav-item">
+                <a class="nav-link" href="/Kanbas/Account/Profile/index.html">
+                    <div class="wd-kanbas-navigation-icon-container">
+                        <i class="fa fa-user fa-2x" style="color: gray"></i></i>
+                    </div>
+                    <div class="wd-kanbas-navigation-item-text wd-course-navigation-profile-text">
+                        Account
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#">
+                    <div class="wd-kanbas-navigation-icon-container">
+                        <i class="fa fa-solid fa-gauge fa-2x" style="color: red"></i></i>
+                    </div>
+                    <div class="wd-kanbas-navigation-item-text">
+                        Dashboard
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/Kanbas/Courses/Home/index.html">
+                    <div class="wd-kanbas-navigation-icon-container">
+                        <i class="fa fa-solid fa-book fa-2x" style="color: red"></i></i>
+                    </div>
+                    <div class="wd-kanbas-navigation-item-text">
+                        Courses
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#">
+                    <div class="wd-kanbas-navigation-icon-container">
+                        <i class="fa fa-regular fa-calendar fa-2x" style="color: red"></i></i>
+                    </div>
+                    <div class="wd-kanbas-navigation-item-text">
+                        Calendar
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#">
+                    <div class="wd-kanbas-navigation-icon-container">
+                        <i class="fa fa-solid fa-inbox fa-2x" style="color: red"></i></i>
+                    </div>
+                    <div class="wd-kanbas-navigation-item-text">
+                        Inbox
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#">
+                    <div class="wd-kanbas-navigation-icon-container">
+                        <i class="fa fa-regular fa-clock fa-2x" style="color: red"></i></i>
+                    </div>
+                    <div class="wd-kanbas-navigation-item-text">
+                        History
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#">
+                    <div class="wd-kanbas-navigation-icon-container">
+                        <i class="fa fa-solid fa-network-wired fa-2x" style="color: red"></i></i>
+                    </div>
+                    <div class="wd-kanbas-navigation-item-text">
+                        Studio
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#">
+                    <div class="wd-kanbas-navigation-icon-container">
+                        <i class="fa fa-solid fa-arrow-right fa-2x" style="color: red"></i></i>
+                    </div>
+                    <div class="wd-kanbas-navigation-item-text">
+                        Commons
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#">
+                    <div class="wd-kanbas-navigation-icon-container">
+                        <i class="fa fa-regular fa-circle-question fa-2x" style="color: red"></i></i>
+                    </div>
+                    <div class="wd-kanbas-navigation-item-text">
+                        Help
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
 <!-- HTML intent is to create rough logical strucutre of what content is - common technique to use ULs or OLs -->
