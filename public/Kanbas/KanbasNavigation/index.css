@@ -59,6 +59,7 @@
 }
 
 .wd-kanbas-navigation-item-text {
+    font-size: small;
     pointer-events: none;
     box-sizing: border-box;
 }
@@ -69,3 +70,6 @@
     text-decoration: none;
 }
 
+.wd-kanbas-navigation li.active {
+    background-color: white;
+}
