@@ -30,6 +30,7 @@
     color: white; /* Foreground should be white */
     padding: 0px;
     width: 84px;
+
     
 }
 
@@ -40,13 +41,14 @@
 }
 
 .wd-kanbas-navigation li a {
-    color: red;
+    color: white;
     text-decoration: none;
+    
 }
 
 
 .wd-course-navigation li a.nav-link {
-    color: red;
+    color: white;
     text-decoration: none;
 }
 
@@ -70,6 +72,7 @@
     text-decoration: none;
 }
 
-.wd-kanbas-navigation li.active {
+.wd-kanbas-navigation li.active a {
     background-color: white;
+    color: red;
 }
