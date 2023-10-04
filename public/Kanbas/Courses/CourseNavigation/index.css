@@ -1,4 +1,9 @@
 
+.wd-course-navigation-container {
+    float: left;
+    width: 200px;
+    margin-left: 20px;
+}
 
 .wd-course-navigation {
     width: 120px;
@@ -16,6 +21,7 @@
 
 .wd-course-navigation li.active {
     border-left: 3px black solid;
+    color: black solid;
 }
 
 /* These would be the hyperlinks
@@ -25,4 +31,9 @@ active is used for li's
 .wd-course-navigation li a {
     color: red;
     text-decoration: none;
+}
+
+.wd-course-navigation li.active a {
+    color: black;
+    
 }

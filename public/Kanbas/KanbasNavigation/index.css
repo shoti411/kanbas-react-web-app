@@ -8,6 +8,20 @@
     width: 60%;
 }
 
+.wd-kanbas-navigation-container {
+    float: left;
+    width: 84px;
+}
+
+.wd-kanbas-navigation {
+    background-color: black; /* Background should be black */
+    color: white; /* Foreground should be white */
+    padding: 0px;
+    width: 84px;
+
+    
+}
+
 .wd-logomark-container {
     width: 100%;
     background-color: var(--ic-brand-global-nav-logo-bgd);
@@ -25,14 +39,6 @@
     height: 75px;
 }
 
-.wd-kanbas-navigation {
-    background-color: black; /* Background should be black */
-    color: white; /* Foreground should be white */
-    padding: 0px;
-    width: 84px;
-
-    
-}
 
 .wd-course-navigation li {
     list-style-type: none;

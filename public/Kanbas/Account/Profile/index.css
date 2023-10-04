@@ -1,0 +1,18 @@
+
+/* Profile Screen */
+
+
+.wd-profile-page-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* put space between profile part and edit profile button */
+}
+
+.wd-profile-container {
+    flex-direction: column;
+}
+
+.wd-profile-edit-button-container {
+    flex-direction: column;
+    text-align: center;
+}
