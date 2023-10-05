@@ -1,4 +1,90 @@
-<link rel="stylesheet" href="/vendors/bootstrap/bootstrap.min.css"/>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="/vendors/bootstrap/css/bootstrap.min.css" />
+        <script src="https://kit.fontawesome.com/a833cd2012.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/styles.css" />
+        <link rel="stylesheet" href="/Kanbas/Courses/CourseNavigation/index.css" />
+        <link rel="stylesheet" href="/Kanbas/Courses/Home/Modules/index.css" />
+        <link rel="stylesheet" href="/Kanbas/Courses/Assignments/index.css" />
+        <link rel="stylesheet" href="/Kanbas/Courses/Assignments/AssignmentEditor/edit.css" />
+    </head>
+    <body>
+        <div> <!-- Kanbas Navigation -->
+
+        </div>
+        <div> <!-- Course Navigation-->
+    
+        </div>
+        <div> <!-- Edit Assignment Screen-->
+            <div>
+                <div class="d-flex wd-course-assignments-editor-header float-end"> <!-- header part -->
+                    <div>
+                        <i class="fa fa-solid fa-circle-check" style="color: green"></i>
+                    </div>
+                    <div>
+                        <p class="wd-course-assignments-editor-header-published">Published</p>
+                    </div>
+                    <div>
+                        <button class="btn btn-light"><span><i class="fa fa-solid fa-ellipsis-vertical"></i></span>&nbsp;</button>
+                    </div>                        
+                </div>
+                <hr />
+            </div>
+            <div>
+                <form action = "/Kanbas/Courses/Assignments/index.html" method="get">
+                    <div>
+                        <label for="assignment-name"><h2>Assignment Name</h2></label>
+                        <input id="assignment-name" class="form-control"  value="A1 - ENV + HTML"/>
+                    </div>
+                    <div>
+                        <textarea class="form-control">This is the assignment description</textarea>
+                    </div>
+                    <div>
+                        <label for="points">Points</label>
+                        <input class="form-control"  id="points" max="100" min="50" step="5" type="number" value="100"/>                       
+                    </div>
+                    <div>
+                        <label for="assignment-group">Assignment Group</label>
+                        <select id="assignment-group" class="form-control">
+                            <option selected>ASSIGNMENTS</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="grade-display">Display Grade as</label>
+                        <select id="grade-display" class="form-control">
+                            <option selected>Percentage</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="submission-type">Submission Type</label>
+                        <select id="submission-type" class="form-control">
+                            <option selected>Online</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Online Entry Options</label>
+                        <div>
+                            <input class="form-control"  type="checkbox" id="text-entry" /> <label for="text-entry">Text Entry</label>
+                        </div>
+                        <div>
+                            <input class="form-control"  type="checkbox" id="media-recording" checked /> Media Recording</label>
+                        </div>
+                        <div>
+                            <input class="form-control"  type="checkbox" id="student-annotation"/> <label for="student-annotation">Student Annotation</label>
+                        </div> 
+                        <div>
+                            <input class="form-control"  type="checkbox" id="file-uploads" checked/> <label for="file-uploads">File Uploads</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
 
 <table border ="1" width = "100%">
     <tbody>
@@ -91,7 +177,7 @@
         <td valign="top"> <!-- Assignment Editor -->
             <form action = "/Kanbas/Courses/Assignments/index.html" method="get">
             <h2>Assignment Name</h2>
-            <input value="A1 - ENV + HTML"/> <!-- preopulate form for value given - bad practice to use breaks usually because usually use css for that but dont know it yet-->
+            <input class="form-control"  value="A1 - ENV + HTML"/> <!-- preopulate form for value given - bad practice to use breaks usually because usually use css for that but dont know it yet-->
             <br />
             <br />
             <textarea>This is the assignment description</textarea> <!-- native element - by default creates multiple rows to type in - default values go in text area - if you start it in a new line like that - any actual space you add in the tab, its part of the content - by default also able to be resized-->
@@ -100,7 +186,7 @@
             
             <label for="points">Points</label>
             <br />
-            <input id="points" max="100" min="50" step="5" type="number" value="100"/> <!-- usually use css to make it take up whole screen, but to make it anywhere around here -to select input field itself anyway - can do that by making points label element - diffferent than name - important for pones-->
+            <input class="form-control"  id="points" max="100" min="50" step="5" type="number" value="100"/> <!-- usually use css to make it take up whole screen, but to make it anywhere around here -to select input field itself anyway - can do that by making points label element - diffferent than name - important for pones-->
             
             
             
@@ -109,7 +195,7 @@
             
             Assignment Group
             <br/>
-            <select>
+            <select class="form-control">
                 <option selected>ASSIGNMENTS</option>
             </select>
 
@@ -118,7 +204,7 @@
 
             Display Grade as
             <br/>
-            <select>
+            <select class="form-control">
                 <option selected>Percentage</option>
             </select>
 
@@ -126,7 +212,7 @@
             <br/>
 
             Submission Type
-            <select>
+            <select class="form-control">
                 <option selected>Online</option>
             </select>
 
@@ -135,19 +221,19 @@
 
             Online Entry Options
             <br />
-            <input type="checkbox" id="text-entry" /> <label for="text-entry">Text Entry</label>  <!-- to create checkboxes use input field to be of type radio button or check box -- checked attributes - if want it already checked, add checked field -->
+            <input class="form-control"  type="checkbox" id="text-entry" /> <label for="text-entry">Text Entry</label>  <!-- to create checkboxes use input field to be of type radio button or check box -- checked attributes - if want it already checked, add checked field -->
             <br />
-            <input type="checkbox" id="media-recording" checked /> Media Recording</label>
+            <input class="form-control"  type="checkbox" id="media-recording" checked /> Media Recording</label>
             <br />
-            <input type="checkbox" id="student-annotation"/> <label for="student-annotation">Student Annotation</label>
+            <input class="form-control"  type="checkbox" id="student-annotation"/> <label for="student-annotation">Student Annotation</label>
             <br />
-            <input type="checkbox" id="file-uploads" checked/> <label for="file-uploads">File Uploads</label>
+            <input class="form-control"  type="checkbox" id="file-uploads" checked/> <label for="file-uploads">File Uploads</label>
             <br />
             <br />
 
             Submission Attempts
             <br />
-            <select>
+            <select class="form-control">
                 <option selected>Unlimited</option>
             </select>
 
@@ -156,7 +242,7 @@
 
             Plagiarism Review
             <br />
-            <select>
+            <select class="form-control">
                 <option selected>None</option>
             </select>
 
@@ -165,14 +251,14 @@
 
             Group Assignment
             <br />
-            <input type="checkbox" id="group-assignment" /> <label for="group-assignment">This is a Group Assignment</label>
+            <input class="form-control"  type="checkbox" id="group-assignment" /> <label for="group-assignment">This is a Group Assignment</label>
 
             <br />
             <br />
 
             Peer Reviews
             <br />
-            <input type="checkbox" id="require-peer-reviews" /> <label for="require-peer-reviews">Require Peer Reviews</label>
+            <input class="form-control"  type="checkbox" id="require-peer-reviews" /> <label for="require-peer-reviews">Require Peer Reviews</label>
 
             <br />
             <br />
@@ -181,7 +267,7 @@
             <br />
             Assign To
             <br />
-            <input value="Everyone" />
+            <input class="form-control"  value="Everyone" />
 
             <br />
             <br />
@@ -189,7 +275,7 @@
             Due
             <br />
             
-            <input type="date" value="2023-09-07" min="2023-09-01" max="2024-01-01"/> <!-- a date picker - always go year then month then day and can also do ranges-->
+            <input class="form-control"  type="date" value="2023-09-07" min="2023-09-01" max="2024-01-01"/> <!-- a date picker - always go year then month then day and can also do ranges-->
 
             <br />
             <br />
@@ -197,7 +283,7 @@
             Available from
             <br />
             
-            <input type="date" value="2023-09-07" min="2023-09-01" max="2024-01-01"/>
+            <input class="form-control"  type="date" value="2023-09-07" min="2023-09-01" max="2024-01-01"/>
 
             <br />
             <br />
@@ -205,7 +291,7 @@
             Until
             <br />
             
-            <input type="date" value="2023-09-07" min="2023-09-01" max="2024-01-01"/>
+            <input class="form-control"  type="date" value="2023-09-07" min="2023-09-01" max="2024-01-01"/>
             
             <br />
             <br />

@@ -1,0 +1,9 @@
+.wd-course-assignments-editor-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.wd-course-assignments-editor-header-published {
+    color: green;
+}
