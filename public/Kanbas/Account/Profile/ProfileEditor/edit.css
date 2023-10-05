@@ -1,0 +1,12 @@
+
+
+.wd-edit-profile-align-with-space-around {
+    display: flex;
+    justify-content: space-around;
+}
+
+.wd-edit-profile-bottom-buttons {
+    display: flex;
+    flex-direction:row;
+    justify-content: flex-end;
+}
