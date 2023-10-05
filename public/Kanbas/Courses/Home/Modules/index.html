@@ -1,6 +1,257 @@
+<link rel="stylesheet" href="/vendors/bootstrap/css/bootstrap.min.css" />
+<script src="https://kit.fontawesome.com/a833cd2012.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/styles.css" />
+<link rel="stylesheet" href="/Kanbas/Courses/CourseNavigation/index.css" />
+<link rel="stylesheet" href="/Kanbas/Courses/Home/Modules/index.css" />
 
-<button>Collapse All</button>
-<button>View Progress</button>
+<div>
+    <div class="container wd-course-home-header">
+        <button type="button" class="btn btn-light">Collapse All</button>
+        <button type="button" class="btn btn-light">View Progress</button>
+
+        <div class="dropdown">
+            <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa fa-regular fa-circle-check" style="color: #00ff1e"></i>
+                Publish All
+            </button>
+            <ul class="dropdown-menu">
+                <li class="list-group-item"><a class="dropdown-item" href="#">Publish All modules and items</a></li>
+                <li class="list-group-item"><a class="dropdown-item" href="#">Publish modules only</a></li>
+                <li class="list-group-item"><a class="dropdown-item" href="#">Unpublish all modules and items</a></li>
+            </ul>
+        </div>
+        <button type="button" class="btn btn-danger">
+            <i class="fa fa-solid fa-plus" style="color: white;"></i>
+            Module
+        </button>
+    </div>
+    <hr />
+    <div> <!-- Modules part -->
+        <ul class="list-group wd-course-home-modules-list">
+            <!--  <li class="list-group-item">
+                <h2>Resources</h2>
+                 <ul class="list-group">
+                     <li class="list-group-item">Resources</li>
+                     <li class="list-group-item">Syllabus</li>
+                     <li class="list-group-item">Calendar</li>
+                     <li class="list-group-item">Piazza</li>
+                </ul>
+            </li> -->
+
+            <li class="list-group-item-secondary">
+                <div class="wd-course-home-modules-list-title">
+                    <div class="wd-course-home-modules-list-title-left">
+                        <div class="wd-course-home-modules-list-title-vertical-ellipses">
+                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <h5>Week 0 - INTRO</h5>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="float-end wd-course-home-modules-icons-container">
+                            <div class="wd-course-home-modules-list-icons">
+                                <i class="fa-solid fa-circle-check" style="color: green"></i>
+                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        LEARNING OBJECTIVES
+                        <div class="float-end wd-course-home-modules-icons-container">
+                            <div class="wd-course-home-modules-icons"><i class="fa-solid fa-circle-check"
+                                    style="color: green"></i></div>
+                            <div class="wd-course-home-modules-icons"><i class="fa fa-ellipsis-v"
+                                    aria-hidden="true"></i></div>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                Introduction to the course
+                                <div class="float-end wd-course-home-modules-icons-container">
+                                    <div class="wd-course-home-modules-icons"><i class="fa-solid fa-circle-check"
+                                            style="color: green"></i></div>
+                                    <div class="wd-course-home-modules-icons"><i class="fa fa-ellipsis-v"
+                                            aria-hidden="true"></i></div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">Learn what is Web Development <div
+                                    class="float-end wd-course-home-modules-icons-container">
+                                    <div class="wd-course-home-modules-icons"><i class="fa-solid fa-circle-check"
+                                            style="color: green"></i></div>
+                                    <div class="wd-course-home-modules-icons"><i class="fa fa-ellipsis-v"
+                                            aria-hidden="true"></i></div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">Creating a development environment <div
+                                    class="float-end wd-course-home-modules-icons-container">
+                                    <div class="wd-course-home-modules-icons"><i class="fa-solid fa-circle-check"
+                                            style="color: green"></i></div>
+                                    <div class="wd-course-home-modules-icons"><i class="fa fa-ellipsis-v"
+                                            aria-hidden="true"></i></div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">Creating a Web Application <div
+                                    class="float-end wd-course-home-modules-icons-container">
+                                    <div class="wd-course-home-modules-icons"><i class="fa-solid fa-circle-check"
+                                            style="color: green"></i></div>
+                                    <div class="wd-course-home-modules-icons"><i class="fa fa-ellipsis-v"
+                                            aria-hidden="true"></i></div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">Getting started with the 1st assignment <div
+                                    class="float-end wd-course-home-modules-icons-container">
+                                    <div class="wd-course-home-modules-icons"><i class="fa-solid fa-circle-check"
+                                            style="color: green"></i></div>
+                                    <div class="wd-course-home-modules-icons"><i class="fa fa-ellipsis-v"
+                                            aria-hidden="true"></i></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        READING
+                        <div class="float-end wd-course-home-modules-icons-container">
+                            <div class="wd-course-home-modules-icons"><i class="fa-solid fa-circle-check"
+                                    style="color: green"></i></div>
+                            <div class="wd-course-home-modules-icons"><i class="fa fa-ellipsis-v"
+                                    aria-hidden="true"></i></div>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">Full Stack Developer - Chapter 1 - Introduction <div
+                                    class="float-end wd-course-home-modules-icons-container">
+                                    <div class="wd-course-home-modules-icons"><i class="fa-solid fa-circle-check"
+                                            style="color: green"></i></div>
+                                    <div class="wd-course-home-modules-icons"><i class="fa fa-ellipsis-v"
+                                            aria-hidden="true"></i></div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">Full Stack Developer - Chapter 2 - Creating User Interfaces With
+                                HTML <div class="float-end wd-course-home-modules-icons-container">
+                                    <div class="wd-course-home-modules-icons"><i class="fa-solid fa-circle-check"
+                                            style="color: green"></i></div>
+                                    <div class="wd-course-home-modules-icons"><i class="fa fa-ellipsis-v"
+                                            aria-hidden="true"></i></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        SLIDES
+                        <div class="float-end wd-course-home-modules-icons-container">
+                            <div class="wd-course-home-modules-icons"><i class="fa-solid fa-circle-check"
+                                    style="color: green"></i></div>
+                            <div class="wd-course-home-modules-icons"><i class="fa fa-ellipsis-v"
+                                    aria-hidden="true"></i></div>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item"><a
+                                    href="https://docs.google.com/presentation/d/1yb_fQd5MhVuFczb5F5II0CoDkVJALFqxUnuwPAXiOAU/edit?usp=sharing">Introduction
+                                    to Web Development Links to an external site.</a></li>
+                            <li class="list-group-item"><a
+                                    href="https://docs.google.com/presentation/d/16yDwIH8np-tQL85g4bpmrsDfO8LaW38jr-fMQirLnoQ/edit?usp=sharing">Creating
+                                    an HTTP server with Node.js Links to an external site.</a></li>
+                            <li class="list-group-item"><a
+                                    href="https://docs.google.com/presentation/d/10B3jLiJ8-HMsA6TPq9JuWfJzsvX9SFnYVuhthrQbFwU/edit?usp=sharing">Creating
+                                    a React Application Links to an external site.</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="list-group-item-secondary">
+                <div class="wd-course-home-modules-list-title">
+                    <div class="wd-course-home-modules-list-title-left">
+                        <div class="wd-course-home-modules-list-title-vertical-ellipses">
+                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <h5>Week 1 - HTML</h5>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="float-end wd-course-home-modules-icons-container">
+                            <div class="wd-course-home-modules-list-icons">
+                                <i class="fa-solid fa-circle-check" style="color: green"></i>
+                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        LEARNING OBJECTIVES
+                        <div class="float-end wd-course-home-modules-icons-container">
+                            <div class="wd-course-home-modules-icons"><i class="fa-solid fa-circle-check"
+                                    style="color: green"></i></div>
+                            <div class="wd-course-home-modules-icons"><i class="fa fa-ellipsis-v"
+                                    aria-hidden="true"></i></div>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">Learn how to create user interfaces with HTML <div
+                                    class="float-end wd-course-home-modules-icons-container">
+                                    <div class="wd-course-home-modules-icons"><i class="fa-solid fa-circle-check"
+                                            style="color: green"></i></div>
+                                    <div class="wd-course-home-modules-icons"><i class="fa fa-ellipsis-v"
+                                            aria-hidden="true"></i></div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">Keep working on assignment 1 <div
+                                    class="float-end wd-course-home-modules-icons-container">
+                                    <div class="wd-course-home-modules-icons"><i class="fa-solid fa-circle-check"
+                                            style="color: green"></i></div>
+                                    <div class="wd-course-home-modules-icons"><i class="fa fa-ellipsis-v"
+                                            aria-hidden="true"></i></div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">Deploy the assignment to Netlify <div
+                                    class="float-end wd-course-home-modules-icons-container">
+                                    <div class="wd-course-home-modules-icons"><i class="fa-solid fa-circle-check"
+                                            style="color: green"></i></div>
+                                    <div class="wd-course-home-modules-icons"><i class="fa fa-ellipsis-v"
+                                            aria-hidden="true"></i></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        READING
+                        <ul class="list-group">
+                            <li class="list-group-item">Full Stack Developer - Chapter 1 - Introduction <div
+                                    class="float-end wd-course-home-modules-icons-container">
+                                    <div class="wd-course-home-modules-icons"><i class="fa-solid fa-circle-check"
+                                            style="color: green"></i></div>
+                                    <div class="wd-course-home-modules-icons"><i class="fa fa-ellipsis-v"
+                                            aria-hidden="true"></i></div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">Full Stack Developer - Chapter 2 - Creating User Interfaces With
+                                HTML <div class="float-end wd-course-home-modules-icons-container">
+                                    <div class="wd-course-home-modules-icons"><i class="fa-solid fa-circle-check"
+                                            style="color: green"></i></div>
+                                    <div class="wd-course-home-modules-icons"><i class="fa fa-ellipsis-v"
+                                            aria-hidden="true"></i></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+</div>
+
+
+
+
+
+
 <select id="publish-all">
     <option selected value="all">Publish All</option>
     <option value="all-modules-and-items">Publish All modules and items</option>
@@ -12,65 +263,73 @@
 
 <hr /> <!-- hr: horizontal rule --> <!-- can also make list of lists-->
 
-<ul>
-    <!-- <li>
+<ul class="list-group">
+    <!--  <li class="list-group-item">
         <h2>Resources</h2>
-        <ul>
-            <li>Resources</li>
-            <li>Syllabus</li>
-            <li>Calendar</li>
-            <li>Piazza</li>
+         <ul class="list-group">
+             <li class="list-group-item">Resources</li>
+             <li class="list-group-item">Syllabus</li>
+             <li class="list-group-item">Calendar</li>
+             <li class="list-group-item">Piazza</li>
         </ul>
     </li> -->
 
-    <li>
+    <li class="list-group-item">
         Week 0 - INTRO
-        <ul>
-            <li>
+        <ul class="list-group">
+            <li class="list-group-item">
                 LEARNING OBJECTIVES
-                <ul>
-                    <li>Introduction to the course</li>
-                    <li>Learn what is Web Development</li>
-                    <li>Creating a development environment</li>
-                    <li>Creating a Web Application</li>
-                    <li>Getting started with the 1st assignment</li>
+                <ul class="list-group">
+                    <li class="list-group-item">Introduction to the course</li>
+                    <li class="list-group-item">Learn what is Web Development</li>
+                    <li class="list-group-item">Creating a development environment</li>
+                    <li class="list-group-item">Creating a Web Application</li>
+                    <li class="list-group-item">Getting started with the 1st assignment</li>
                 </ul>
             </li>
-            <li>
+            <li class="list-group-item">
                 READING
-                <ul>
-                    <li>Full Stack Developer - Chapter 1 - Introduction</li>
-                    <li>Full Stack Developer - Chapter 2 - Creating User Interfaces With HTML</li>
+                <ul class="list-group">
+                    <li class="list-group-item">Full Stack Developer - Chapter 1 - Introduction</li>
+                    <li class="list-group-item">Full Stack Developer - Chapter 2 - Creating User Interfaces With HTML
+                    </li>
                 </ul>
             </li>
-            <li>
+            <li class="list-group-item">
                 SLIDES
-                <ul>
-                    <li><a href="https://docs.google.com/presentation/d/1yb_fQd5MhVuFczb5F5II0CoDkVJALFqxUnuwPAXiOAU/edit?usp=sharing">Introduction to Web Development Links to an external site.</a></li>
-                    <li><a href="https://docs.google.com/presentation/d/16yDwIH8np-tQL85g4bpmrsDfO8LaW38jr-fMQirLnoQ/edit?usp=sharing">Creating an HTTP server with Node.js Links to an external site.</a></li>
-                    <li><a href="https://docs.google.com/presentation/d/10B3jLiJ8-HMsA6TPq9JuWfJzsvX9SFnYVuhthrQbFwU/edit?usp=sharing">Creating a React Application Links to an external site.</a></li>
+                <ul class="list-group">
+                    <li class="list-group-item"><a
+                            href="https://docs.google.com/presentation/d/1yb_fQd5MhVuFczb5F5II0CoDkVJALFqxUnuwPAXiOAU/edit?usp=sharing">Introduction
+                            to Web Development Links to an external site.</a></li>
+                    <li class="list-group-item"><a
+                            href="https://docs.google.com/presentation/d/16yDwIH8np-tQL85g4bpmrsDfO8LaW38jr-fMQirLnoQ/edit?usp=sharing">Creating
+                            an HTTP server with Node.js Links to an external site.</a></li>
+                    <li class="list-group-item"><a
+                            href="https://docs.google.com/presentation/d/10B3jLiJ8-HMsA6TPq9JuWfJzsvX9SFnYVuhthrQbFwU/edit?usp=sharing">Creating
+                            a React Application Links to an external site.</a></li>
                 </ul>
             </li>
         </ul>
     </li>
-    <li>
+    <li class="list-group-item">
         Week 1 - HTML
-        <ul>
-            <li>
+        <ul class="list-group">
+            <li class="list-group-item">
                 LEARNING OBJECTIVES
-                <ul>
-                    <li>Learn how to create user interfaces with HTML</li>
-                    <li>Keep working on assignment 1</li>
-                    <li>Deploy the assignment to Netlify</li>
+                <ul class="list-group">
+                    <li class="list-group-item">Learn how to create user interfaces with HTML</li>
+                    <li class="list-group-item">Keep working on assignment 1</li>
+                    <li class="list-group-item">Deploy the assignment to Netlify</li>
                 </ul>
             </li>
-            <li>
+            <li class="list-group-item">
                 READING
-                <ul>
-                    <li>Full Stack Developer - Chapter 1 - Introduction</li>
-                    <li>Full Stack Developer - Chapter 2 - Creating User Interfaces With HTML</li>
+                <ul class="list-group">
+                    <li class="list-group-item">Full Stack Developer - Chapter 1 - Introduction</li>
+                    <li class="list-group-item">Full Stack Developer - Chapter 2 - Creating User Interfaces With HTML
+                    </li>
                 </ul>
             </li>
         </ul>
     </li>
-
+</ul>

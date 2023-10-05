@@ -1,0 +1,54 @@
+.wd-course-home-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+
+}
+
+
+
+.wd-course-home-modules-list-title {
+    padding-left: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.wd-course-home-modules-list-title-left {
+    padding-left: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.wd-course-home-modules-list-title-vertical-ellipses {
+    padding-right: 10px;
+}
+
+.wd-course-home-modules-list li.list-group-item ul {
+    margin: 10px;
+}
+
+.wd-course-home-modules-list li.list-group-item ul.list-group {
+    border-left: green solid;
+}
+
+/* Module Links should be red and not underlined */
+.wd-course-home-modules-list li ul li a {
+    color: red;
+    text-decoration: none;
+}
+
+.wd-course-home-modules-icons-container {
+    display: flex;
+    flex-direction: row;
+    padding-right: 5px;
+}
+
+
+.wd-course-home-modules-icons {
+    padding-right: 5px;
+}
+
+.wd-course-home-modules-list-icons {
+    padding-right: none;
+}
