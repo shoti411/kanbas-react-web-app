@@ -1,0 +1,17 @@
+
+.wd-course-grades-header {
+    display: flex;
+    flex-direction: row-reverse;
+
+}
+
+.wd-course-grades-2cols-head {
+    display: flex;
+    flex-direction: row;
+}
+
+.input-group {
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}

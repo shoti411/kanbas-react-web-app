@@ -1,11 +1,79 @@
-<html>
+
+<html lang="en">
     <head>
+        <link rel="stylesheet" href="/vendors/bootstrap/css/bootstrap.min.css" />
+        <script src="https://kit.fontawesome.com/a833cd2012.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/styles.css" />
         <link rel="stylesheet" href="/Kanbas/Courses/CourseNavigation/index.css"/>
+        <link rel="stylesheet" href="/Kanbas/Courses/Grades/grades-table.css"/>
+        <link rel="stylesheet" href="/Kanbas/Courses/Grades/index.css" />
     </head>
     <body>
+        <div> <!-- KanbasNavigation -->
+
+        </div>
+        <div> <!-- Course Navigation-->
+
+        </div>
+        <div> <!-- Initial Stuff and Grades Table -->
+            <div class="wd-course-grades-header">
+                <div>
+                    <button class="btn btn-light">
+                        <i class="fa-solid fa-gear"></i>
+                    </button>
+                </div>
+                <div class="dropdown">
+                    <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-file-export"></i>
+                        Export
+                    </a>
+                  
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <button class="btn btn-light">
+                        <i class="fa fa-file-import"></i>
+                        Import
+                    </button>
+                </div>
+            </div>
+            <div class="wd-course-grades-2cols-head">
+                <div>
+                    <div>
+                        <label for="student-names"><h3>Student Names</h3></label>
+                    </div>
+                    <div class="input-group">
+                        <i class="fa fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="student-names" class="form-control" placeholder="Search Students" title="Type the usernames of students you want to filter"/>
+                    </div>
+                    <div>
+                        <button class="btn btn-light">
+                            <i class="fa fa-filter"></i>
+                            Apply Filters
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label for="assignment-names"><h3>Assignment Names</h3></label>
+                    </div>
+                    <div class="input-group">
+                        <i class="fa fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="assignment-names" class="form-control" placeholder="Search Assignments" title="Type the names of the assignments you want to filter"/>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
 
     </body>
 </html>
+
+
 <table border ="1" width = "100%"> 
     <tr>
         <td valign="top"> <!-- KanbasNavigation -->
