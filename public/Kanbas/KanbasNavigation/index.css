@@ -11,6 +11,7 @@
 .wd-kanbas-navigation-container {
     float: left;
     width: 84px;
+    position: fixed;
 }
 
 .wd-kanbas-navigation {
@@ -24,7 +25,7 @@
 
 .wd-logomark-container {
     width: 100%;
-    background-color: var(--ic-brand-global-nav-logo-bgd);
+    background-color: black;
     box-sizing: border-box;
 }
 

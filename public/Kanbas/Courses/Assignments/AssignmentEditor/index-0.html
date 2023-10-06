@@ -1,0 +1,219 @@
+
+
+<table border ="1" width = "100%">
+    <tbody>
+        <td valign="top"> <!-- Kanbas Navigation -->
+            <ul>
+                <li>
+                    <a href="/Kanbas/Account/Profile/index.html">Account</a>
+                </li>
+                <li>
+                    <a href="#">Dashboard</a>
+                </li>
+                <li>
+                    <a href="/Kanbas/Courses/Home/index.html">Courses</a>
+                </li>
+                <li>
+                    <a href="#">Calendar</a>
+                </li>
+                <li>
+                    <a href="#">Inbox</a>
+                </li>
+                <li>
+                    <a href="#">History</a>
+                </li>
+                <li>
+                    <a href="#">Studio</a>
+                </li>
+                <li>
+                    <a href="#">Commons</a>
+                </li>
+                <li>
+                    <a href="#">Help</a>
+                </li>
+            </ul>
+        </td>
+        <td valign="top"> <!-- Course Navigation -->
+            <ul>
+                <li>
+                    <a href="/Kanbas/Courses/Home/index.html">Home</a>
+                </li>
+                <li>
+                    <a href="/Kanbas/Courses/Home/index.html">Modules</a>
+                </li>
+                <li>
+                    <a href="https://piazza.com/class/lm1gi2uzv1x402">Piazza</a>
+                </li>
+                <li>
+                    <a href="#">Zoom Meetings</a>
+                </li>
+                <li>
+                    <a href="/Kanbas/Courses/Assignments/index.html">Assignments</a>
+                </li>
+                <li>
+                    <a href="#">Quizzes</a>
+                </li>
+                <li>
+                    <a href="/Kanbas/Courses/Grades/index.html">Grades</a>
+                </li>
+                <li>
+                    <a href="#">People</a>
+                </li>
+                <li>
+                    <a href="#">Panopto Video</a>
+                </li>
+                <li>
+                    <a href="#">Discussions</a>
+                </li>
+                <li>
+                    <a href="#">Announcements</a>
+                </li>
+                <li>
+                    <a href="#">Pages</a>
+                </li>
+                <li>
+                    <a href="#">Files</a>
+                </li>
+                <li>
+                    <a href="#">Rubrics</a>
+                </li>
+                <li>
+                    <a href="#">Outcomes</a>
+                </li>
+                <li>
+                    <a href="#">Collaborations</a>
+                </li>
+                <li>
+                    <a href="#">Syllabus</a>
+                </li>
+            </ul>
+        </td>
+        <td valign="top"> <!-- Assignment Editor -->
+            <form action = "/Kanbas/Courses/Assignments/index.html" method="get">
+            <h2>Assignment Name</h2>
+            <input class="form-control"  value="A1 - ENV + HTML"/> <!-- preopulate form for value given - bad practice to use breaks usually because usually use css for that but dont know it yet-->
+            <br />
+            <br />
+            <textarea>This is the assignment description</textarea> <!-- native element - by default creates multiple rows to type in - default values go in text area - if you start it in a new line like that - any actual space you add in the tab, its part of the content - by default also able to be resized-->
+            
+            <br />
+            
+            <label for="points">Points</label>
+            <br />
+            <input class="form-control"  id="points" max="100" min="50" step="5" type="number" value="100"/> <!-- usually use css to make it take up whole screen, but to make it anywhere around here -to select input field itself anyway - can do that by making points label element - diffferent than name - important for pones-->
+            
+            
+            
+            <br/>
+            <br/>
+            
+            Assignment Group
+            <br/>
+            <select class="form-control">
+                <option selected>ASSIGNMENTS</option>
+            </select>
+
+            <br />
+            <br/>
+
+            Display Grade as
+            <br/>
+            <select class="form-control">
+                <option selected>Percentage</option>
+            </select>
+
+            <br/>
+            <br/>
+
+            Submission Type
+            <select class="form-control">
+                <option selected>Online</option>
+            </select>
+
+            <br />
+            <br />
+
+            Online Entry Options
+            <br />
+            <input class="form-control"  type="checkbox" id="text-entry" /> <label for="text-entry">Text Entry</label>  <!-- to create checkboxes use input field to be of type radio button or check box -- checked attributes - if want it already checked, add checked field -->
+            <br />
+            <input class="form-control"  type="checkbox" id="media-recording" checked /> Media Recording</label>
+            <br />
+            <input class="form-control"  type="checkbox" id="student-annotation"/> <label for="student-annotation">Student Annotation</label>
+            <br />
+            <input class="form-control"  type="checkbox" id="file-uploads" checked/> <label for="file-uploads">File Uploads</label>
+            <br />
+            <br />
+
+            Submission Attempts
+            <br />
+            <select class="form-control">
+                <option selected>Unlimited</option>
+            </select>
+
+            <br />
+            <br />
+
+            Plagiarism Review
+            <br />
+            <select class="form-control">
+                <option selected>None</option>
+            </select>
+
+            <br />
+            <br />
+
+            Group Assignment
+            <br />
+            <input class="form-control"  type="checkbox" id="group-assignment" /> <label for="group-assignment">This is a Group Assignment</label>
+
+            <br />
+            <br />
+
+            Peer Reviews
+            <br />
+            <input class="form-control"  type="checkbox" id="require-peer-reviews" /> <label for="require-peer-reviews">Require Peer Reviews</label>
+
+            <br />
+            <br />
+
+            Assign
+            <br />
+            Assign To
+            <br />
+            <input class="form-control"  value="Everyone" />
+
+            <br />
+            <br />
+            
+            Due
+            <br />
+            
+            <input class="form-control"  type="date" value="2023-09-07" min="2023-09-01" max="2024-01-01"/> <!-- a date picker - always go year then month then day and can also do ranges-->
+
+            <br />
+            <br />
+
+            Available from
+            <br />
+            
+            <input class="form-control"  type="date" value="2023-09-07" min="2023-09-01" max="2024-01-01"/>
+
+            <br />
+            <br />
+
+            Until
+            <br />
+            
+            <input class="form-control"  type="date" value="2023-09-07" min="2023-09-01" max="2024-01-01"/>
+            
+            <br />
+            <br />
+            
+            <button>Cancel</button>
+            <button>Save</button>
+            </form>
+        </td>
+    </tbody>
+</table>
+

@@ -1,0 +1,167 @@
+
+<table border ="1" width = "100%"> 
+    <tr>
+        <td valign="top"> <!-- KanbasNavigation -->
+            <ul>
+                <li>
+                    <a href="/Kanbas/Account/Profile/index.html">Account</a>
+                </li>
+                <li>
+                    <a href="#">Dashboard</a>
+                </li>
+                <li>
+                    <a href="/Kanbas/Courses/Home/index.html">Courses</a>
+                </li>
+                <li>
+                    <a href="#">Calendar</a>
+                </li>
+                <li>
+                    <a href="#">Inbox</a>
+                </li>
+                <li>
+                    <a href="#">History</a>
+                </li>
+                <li>
+                    <a href="#">Studio</a>
+                </li>
+                <li>
+                    <a href="#">Commons</a>
+                </li>
+                <li>
+                    <a href="#">Help</a>
+                </li>
+            </ul>
+        </td> <!-- by default all aligned in center-->
+        <td valign="top"> <!-- Course Navigation-->
+            <ul>
+                <li>
+                    <a href="/Kanbas/Courses/Home/index.html">Home</a>
+                </li>
+                <li>
+                    <a href="/Kanbas/Courses/Home/index.html">Modules</a>
+                </li>
+                <li>
+                    <a href="https://piazza.com/class/lm1gi2uzv1x402">Piazza</a>
+                </li>
+                <li>
+                    <a href="#">Zoom Meetings</a>
+                </li>
+                <li>
+                    <a href="/Kanbas/Courses/Assignments/index.html">Assignments</a>
+                </li>
+                <li>
+                    <a href="#">Quizzes</a>
+                </li>
+                <li>
+                    <a href="/Kanbas/Courses/Grades/index.html">Grades</a>
+                </li>
+                <li>
+                    <a href="#">People</a>
+                </li>
+                <li>
+                    <a href="#">Panopto Video</a>
+                </li>
+                <li>
+                    <a href="#">Discussions</a>
+                </li>
+                <li>
+                    <a href="#">Announcements</a>
+                </li>
+                <li>
+                    <a href="#">Pages</a>
+                </li>
+                <li>
+                    <a href="#">Files</a>
+                </li>
+                <li>
+                    <a href="#">Rubrics</a>
+                </li>
+                <li>
+                    <a href="#">Outcomes</a>
+                </li>
+                <li>
+                    <a href="#">Collaborations</a>
+                </li>
+                <li>
+                    <a href="#">Syllabus</a>
+                </li>
+            </ul>
+        </td>
+            <td valign="top"> <!-- Initial Stuff and Grades Table -->
+            <select>
+                <option>Gradebook</option>
+            </select>
+            <button>Import</button>
+            <select> 
+                <option>Export</option>
+            </select>
+            <button>Configure</button>
+            
+            <h2>Student Names</h2>
+            <input type="text" placeholder="Search Students" title="Type the usernames of students you want to filter" />
+            
+            <h3>Assignment Names</h3>
+            <input type="text" placeholder="Search Assignments" title="Type the names of the assignments you want to filter"/>
+
+            <br />
+            
+            <button>Apply Filter</button>
+
+            <br />
+            <br />
+
+            <table width="100%" border="1">
+                <thead>
+                    <tr>
+                        <th> <!-- TH means theading which bolds it --> <!-- if columns dont fit and dont want to scroll entire screen, you'd want to scroll just table not entire screen - goes to responsive design - do with css-->
+                            Student Name
+                        </th>
+                        <th>
+                            A1 - HTML
+                        </th>
+                        <th>
+                            A2 - CSS
+                        </th>
+                        <th>
+                            A3 - JS
+                        </th>
+                        <th>
+                            A4 - HTML+CSS+JS
+                        </th>
+                    </tr>
+                </thead> <!-- this is where put headers at top of table - usually only 1 row but can have multiple-->
+                <tbody>
+                    <tr>
+                        <td><a href="#">John Dever</a></td>
+                        <td>100</td>
+                        <td><input min="0" max="100" type="number" value="50" /></td>
+                        <td>100</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Jane Doe</a></td>
+                        <td><input min="0" max="100" type="number" value="84" /></td>
+                        <td>75</td>
+                        <td>85</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Luke Po</a></td>
+                        <td>98</td>
+                        <td>76</td>
+                        <td><input min="0" max="100" type="number" value="100" /></td>
+                        <td>97</td>
+                    </tr>
+                    
+                    <tr>
+                        <td><a href="#">Oliver Twist</a></td>
+                        <td>89</td>
+                        <td>93</td>
+                        <td>92</td>
+                        <td><input min="0" max="100" type="number" value="96" /></td>
+                    </tr>
+                </tbody> <!-- where have actual data usually-->
+                <tfoot></tfoot> <!-- usually where put like averages or something-->
+            </table>
+        </td>
+    </tr>
+</table>

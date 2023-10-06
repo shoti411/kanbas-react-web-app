@@ -9,7 +9,9 @@
 }
 
 .wd-profile-container {
+    display: flex;
     flex-direction: column;
+    padding-left: 50px;
 }
 
 .wd-profile-edit-button-container {

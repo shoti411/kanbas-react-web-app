@@ -1,4 +1,8 @@
 
+.wd-course-grades-table {
+    width: 100%;
+}
+
 .wd-course-grades-table td a{
     color: red;
     text-decoration: none;

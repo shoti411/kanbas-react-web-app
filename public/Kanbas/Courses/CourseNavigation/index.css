@@ -1,4 +1,5 @@
 
+
 .wd-course-navigation-container {
     float: left;
     width: 200px;
@@ -14,7 +15,7 @@
 /*list items here*/
 .wd-course-navigation li {
     list-style-type: none;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
     padding-left: 10px;
     font-size: larger;
 }

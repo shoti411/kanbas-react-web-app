@@ -1,0 +1,246 @@
+<div class="flex-row-container">
+            
+    <div> <!-- Kanbas Navigation -->
+        
+    </div>
+    <div> <!-- Course Navigation -->
+
+
+    </div>
+    <div> <!-- Course Home Page -->
+        <!-- Breadcrumb part -->
+        <div>
+            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">CS4550 Web Development</a></li>
+                  <li class="breadcrumb-item" aria-current="page">2023 Term</li>
+                  <li class="breadcrumb-item"><a href="#">Sec 01</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Home</li>
+                </ol>
+              </nav>
+        </div>
+        <div> <!-- Modules part -->
+
+        </div>
+    </div>
+    <div class="d-xxl-block d-xl-block d-lg-block d-md-none d-sm-none"> <!-- Remaining width-->
+
+    </div>
+</div>
+
+
+<table border ="1" width = "100%"> <!-- these called attributes - different nodes have different attirbutes-->
+    <tbody>
+        <tr> <!-- these called elements/nodes each node inside another node - like this inside node tbody-->
+            <td valign="top"> <!-- Kanbas Navigation-->
+                <ul>
+                    <li>
+                        <a href="/Kanbas/Account/Profile/index.html">Account</a>
+                    </li>
+                    <li>
+                        <a href="#">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="/Kanbas/Courses/Home/index.html">Courses</a>
+                    </li>
+                    <li>
+                        <a href="#">Calendar</a>
+                    </li>
+                    <li>
+                        <a href="#">Inbox</a>
+                    </li>
+                    <li>
+                        <a href="#">History</a>
+                    </li>
+                    <li>
+                        <a href="#">Studio</a>
+                    </li>
+                    <li>
+                        <a href="#">Commons</a>
+                    </li>
+                    <li>
+                        <a href="#">Help</a>
+                    </li>
+                </ul>
+            </td> <!-- can use to change vertical alignment to top (usually we would use css to do that but dont know css yet)-->
+            <td valign="top"> <!-- Course Navigation -->
+                <ul>
+                    <li>
+                        <a href="/Kanbas/Courses/Home/index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="/Kanbas/Courses/Home/index.html">Modules</a>
+                    </li>
+                    <li>
+                        <a href="https://piazza.com/class/lm1gi2uzv1x402">Piazza</a>
+                    </li>
+                    <li>
+                        <a href="#">Zoom Meetings</a>
+                    </li>
+                    <li>
+                        <a href="/Kanbas/Courses/Assignments/index.html">Assignments</a>
+                    </li>
+                    <li>
+                        <a href="#">Quizzes</a>
+                    </li>
+                    <li>
+                        <a href="/Kanbas/Courses/Grades/index.html">Grades</a>
+                    </li>
+                    <li>
+                        <a href="#">People</a>
+                    </li>
+                    <li>
+                        <a href="#">Panopto Video</a>
+                    </li>
+                    <li>
+                        <a href="#">Discussions</a>
+                    </li>
+                    <li>
+                        <a href="#">Announcements</a>
+                    </li>
+                    <li>
+                        <a href="#">Pages</a>
+                    </li>
+                    <li>
+                        <a href="#">Files</a>
+                    </li>
+                    <li>
+                        <a href="#">Rubrics</a>
+                    </li>
+                    <li>
+                        <a href="#">Outcomes</a>
+                    </li>
+                    <li>
+                        <a href="#">Collaborations</a>
+                    </li>
+                    <li>
+                        <a href="#">Syllabus</a>
+                    </li>
+                </ul>
+            </td>
+            <td valign="top"> <!-- Modules -->
+                <button>Collapse All</button>
+                <button>View Progress</button>
+                <select id="publish-all">
+                    <option selected value="all">Publish All</option>
+                    <option value="all-modules-and-items">Publish All modules and items</option>
+                    <option value="only-modules">Publish modules only</option>
+                    <option value="unpublish">Unpublish all modules and items</option>
+                </select>
+                <button>Module</button>
+                
+                
+                <hr /> <!-- hr: horizontal rule --> <!-- can also make list of lists-->
+                
+                <ul> <!-- This commented out part here is because the home page which was requested in the assignment did not include these elements, but they were on our home page on Canvas (we just did not need to replicate them in the assignment)-->
+                    <!-- <li>
+                        <h2>Resources</h2>
+                        <ul>
+                            <li>Resources</li>
+                            <li>Syllabus</li>
+                            <li>Calendar</li>
+                            <li>Piazza</li>
+                        </ul>
+                    </li> -->
+                
+                    <li>
+                        Week 0 - INTRO
+                        <ul>
+                            <li>
+                                LEARNING OBJECTIVES
+                                <ul>
+                                    <li>Introduction to the course</li>
+                                    <li>Learn what is Web Development</li>
+                                    <li>Creating a development environment</li>
+                                    <li>Creating a Web Application</li>
+                                    <li>Getting started with the 1st assignment</li>
+                                </ul>
+                            </li>
+                            <li>
+                                READING
+                                <ul>
+                                    <li>Full Stack Developer - Chapter 1 - Introduction</li>
+                                    <li>Full Stack Developer - Chapter 2 - Creating User Interfaces With HTML</li>
+                                </ul>
+                            </li>
+                            <li>
+                                SLIDES
+                                <ul>
+                                    <li><a href="https://docs.google.com/presentation/d/1yb_fQd5MhVuFczb5F5II0CoDkVJALFqxUnuwPAXiOAU/edit?usp=sharing">Introduction to Web Development Links to an external site.</a></li>
+                                    <li><a href="https://docs.google.com/presentation/d/16yDwIH8np-tQL85g4bpmrsDfO8LaW38jr-fMQirLnoQ/edit?usp=sharing">Creating an HTTP server with Node.js Links to an external site.</a></li>
+                                    <li><a href="https://docs.google.com/presentation/d/10B3jLiJ8-HMsA6TPq9JuWfJzsvX9SFnYVuhthrQbFwU/edit?usp=sharing">Creating a React Application Links to an external site.</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Week 1 - HTML
+                        <ul>
+                            <li>
+                                LEARNING OBJECTIVES
+                                <ul>
+                                    <li>Learn how to create user interfaces with HTML</li>
+                                    <li>Keep working on assignment 1</li>
+                                    <li>Deploy the assignment to Netlify</li>
+                                </ul>
+                            </li>
+                            <li>
+                                READING
+                                <ul>
+                                    <li>Full Stack Developer - Chapter 1 - Introduction</li>
+                                    <li>Full Stack Developer - Chapter 2 - Creating User Interfaces With HTML</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                
+                
+            </td>
+            <td valign="top"> <!-- Course Status -->
+                <h2>Course Status</h2>
+                <button>Unpublish</button>
+                <button>Published</button>
+                <br />
+                <ul>
+                    <li><a href="#">Import Existing Content</a></li>
+                    <li><a href="#">Import From Commons</a></li>
+                    <li><a href="#">Choose Home Page</a></li>
+                    <li><a href="#">View Course Stream</a></li>
+                    <li><a href="#">New Announcement</a></li>
+                    <li><a href="#">New Analytics</a></li>
+                    <li><a href="#">View Course Notifications</a></li>
+                </ul>
+                <h2>Comming Up</h2>
+                <a href="#">View Calendar</a>
+                <ul>
+                    <li><a href="#">Lecture CS44550.12631.202410 Sep 7 at 11:45am</a></li>
+                    <li><a href="#">Lecture CS44550.12631.202410 Sep 11 at 11:45am</a></li>
+                    <li><a href="#">CS5610 06 SP23 Lecture Sep 11 at 6pm</a></li>
+                </ul>
+            </td>
+        </tr> <!-- this is closing element-->
+    </tbody>
+</table>
+
+<!-- This html doc - can convert this into course navigation js fle - can convert everything to string and stuff too and export it - can remove course navigator and instead import my course navigator and call it-->
+<!--import home from "" -->
+
+<div id="root">
+
+    <!-- ${CourseNavigation("")}
+    
+    
+    ${
+        links
+        .map(link)
+        
+    }-->
+
+</div>
+
+<script type="module">
+    import home from "./home.js";
+    const root = document.getElementById("root");
+    //const home = new home();
+    root.innerHTML = home();
+</script>
