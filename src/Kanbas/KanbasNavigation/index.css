@@ -1,0 +1,85 @@
+.wd-col-20pc {
+    float: left;
+    width: 20%;
+}
+
+.wd-col-60pc {
+    float: left;
+    width: 60%;
+}
+
+.wd-kanbas-navigation-container {
+    float: left;
+    width: 84px;
+    position: fixed;
+}
+
+.wd-kanbas-navigation {
+    background-color: black; /* Background should be black */
+    color: white; /* Foreground should be white */
+    padding: 0px;
+    width: 84px;
+
+    
+}
+
+.wd-logomark-container {
+    width: 100%;
+    background-color: black;
+    box-sizing: border-box;
+}
+
+.wd-logomark-container a {
+    background-image: url("/src/images/northeastern-logo.png");
+    display: block;
+    overflow: hidden;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: transform .3s;
+    height: 75px;
+}
+
+
+.wd-course-navigation li {
+    list-style-type: none;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.wd-kanbas-navigation li a {
+    color: white;
+    text-decoration: none;
+    
+}
+
+
+.wd-course-navigation li a.nav-link {
+    color: white;
+    text-decoration: none;
+}
+
+.wd-kanbas-navigation-icon-container {
+    transform: translate3d(0,0,0);
+    position: relative;
+    z-index: 1;
+    width: 48px;
+    margin: 0 auto;
+}
+
+.wd-kanbas-navigation-item-text {
+    font-size: small;
+    pointer-events: none;
+    box-sizing: border-box;
+}
+
+
+.wd-course-navigation-profile-text {
+    color: white;
+    text-decoration: none;
+}
+
+.wd-kanbas-navigation li.active a {
+    background-color: white;
+    color: red;
+}
