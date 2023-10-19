@@ -82,4 +82,5 @@
 .wd-kanbas-navigation li.active a {
     background-color: white;
     color: red;
+    width: 84px;
 }

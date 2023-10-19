@@ -1,5 +1,6 @@
 import './index.css';
-import { Link, useLocation } from "react-router-dom";
+import { Routes, Route, Link, useLocation } from "react-router-dom";
+import Dashboard from '../Dashboard';
 import {BiUserCircle} from "react-icons/bi";
 import {RiDashboard3Fill} from "react-icons/ri";
 import {FaBook} from "react-icons/fa";
@@ -49,7 +50,8 @@ function KanbasNavigation() {
     // };
     const styleaccount = {color: "gray"};
     const stylelistitem = {color: "red", fontSize: "1.5em"};
-    const iconsize = {size: 3};
+    const defaulticonsizeinpixels = 16; // 16px is default size
+    const iconsize = 2 * defaulticonsizeinpixels; 
     const links = ["Account", "Dashboard", "Courses", "Calendar", "Inbox", "History", "Studio", "Commons", "Help"];
 
     const linkToIconMap = {
@@ -71,7 +73,7 @@ function KanbasNavigation() {
                 <a href="https://northeastern.instructure.com/"></a>
             </div>
             <div style={{ width: 84 }}>
-            <ul className="nav nav-pills nav-flush flex-column mb-auto text-center wd-kanbas-navigation">
+            <ul className="nav nav-bar nav-flush flex-column mb-auto text-center wd-kanbas-navigation">
                 {links.map((link, index) => (
                         <li className={`nav-item ${pathname.includes(link) && "active"}`}>
                             <Link
@@ -85,6 +87,10 @@ function KanbasNavigation() {
                                         {link}
                                     </div>
                             </Link>
+                        <Routes>
+                            <Route path="/" element={<Dashboard/>} />
+                            
+                        </Routes>
                         </li>
                     ))}
             </ul>
@@ -102,4 +108,4 @@ export default KanbasNavigation;
 // { Link, useLocation } from "react-router-dom";
 // n KanbasNavigation() {
 //     links = ["Account"]
-// }
+// } <Route path="Kanbas/Courses/*" element={}/>
