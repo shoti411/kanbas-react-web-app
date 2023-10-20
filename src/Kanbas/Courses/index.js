@@ -19,8 +19,8 @@ function Courses() {
   const menuIconSize = 16; // 16 px size
   
   return (
-    <div>
-      <div className="wd-course-breadcrumb-header">
+    <div className="col">
+      <div className="wd-course-breadcrumb-header d-flex">
         <AiOutlineMenu style={menuIconStyle} size={menuIconSize} className="wd-course-header-bars"/>
         <nav className="wd-course-breadcrumb-navbar" aria-label="breadcrumb">
           <ol className="breadcrumb">
@@ -32,19 +32,20 @@ function Courses() {
         </nav>
       </div>
       <hr />
-      <div class="wd-course-page-and-navigation">
+      <div class="wd-course-page-and-navigation d-flex">
         <CourseNavigation />
         <div
           className="d-flex overflow-y-scroll bottom-0 end-0 container"
           style={{
             left: "320px",
             top: "50px",
-          }}
-        >
+          }}>
           <Routes>
             <Route path="/" element={<Navigate to="Home" />} />
             <Route path="Home" element={<Home/>} />
             <Route path="Modules" element={<Modules/>} />
+            <Route path="Piazza" element={<Navigate to="https://piazza.com/class/lm1gi2uzv1x402"/>} />
+            <Route path="Zoom Meetings" element={<h2>Zoom Meetings</h2>} />
             <Route path="Assignments" element={<Assignments/>} />
             <Route
               path="Assignments/:assignmentId"

@@ -1,0 +1,29 @@
+.wd-course-home-coursestatus-published {
+    color: white;
+
+}
+
+.wd-course-home-coursestatus-viewcalendar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.wd-course-home-coursestatus-link {
+    color: red;
+    text-decoration: none;
+}
+
+.wd-course-home-coursestatus-list li div div.fw-bold {
+    color: red;
+    text-decoration: none;
+}
+
+.fw-bold {
+    color: red;
+    text-decoration: none;
+}
+
+.wd-course-home-coursestatus-col {
+    padding-left: 10px;
+}

@@ -1,10 +1,12 @@
-import ModuleList from "../Modules/ModuleList";
+import './../../../styles.css';
+import './../Modules/index.css';
+import Modules from "../Modules";
+import CourseStatus from './CourseStatus';
 function Home() {
     return (
-      <div>
-        <h2>Home</h2>
-        <ModuleList />
-        <h2>Status</h2>
+      <div className="wd-course-page-and-navigation">
+        <Modules/>
+        <CourseStatus/>
       </div>
     );
   }
