@@ -1,4 +1,4 @@
-import db from "../../Kanbas/Database";
+import db from "../Database";
 import { Navigate, Route, Routes, useParams } from "react-router-dom";
 import CourseNavigation from "./CourseNavigation";
 import Modules from "./Modules";
@@ -6,14 +6,21 @@ import Home from "./Home";
 import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/AssignmentEditor";
 import Grades from "./Grades";
+import { AiOutlineMenu } from "react-icons/ai";
 
 
 function Courses() {
-  const { courseId } = useParams();
-  const course = db.courses.find((course) => course._id === courseId);
+  const { courseId } = useParams(); // get course id from hyperlink
+  const course = db.courses.find((course) => course._id === courseId); // get specific course from courses in database
+  const menuIconStyle = {color: "red"};
+  const menuIconSize = 16; // 16 px size
+  
+  console.log(course.name);
   return (
     <div>
-      <h1>Course {course.name}</h1>
+    
+      <h1><AiOutlineMenu style={menuIconStyle} size={menuIconSize}/> Course {course.name}</h1>
+      
       <CourseNavigation />
       <div>
         <div
