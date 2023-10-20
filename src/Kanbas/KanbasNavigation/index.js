@@ -1,3 +1,4 @@
+import './../../styles.css';
 import './index.css';
 import { Routes, Route, Link, useLocation } from "react-router-dom";
 import Dashboard from '../Dashboard';
@@ -87,10 +88,6 @@ function KanbasNavigation() {
                                         {link}
                                     </div>
                             </Link>
-                        <Routes>
-                            <Route path="/" element={<Dashboard/>} />
-                            
-                        </Routes>
                         </li>
                     ))}
             </ul>
@@ -109,3 +106,10 @@ export default KanbasNavigation;
 // n KanbasNavigation() {
 //     links = ["Account"]
 // } <Route path="Kanbas/Courses/*" element={}/>
+
+/*
+                        <Routes>
+                            <Route path="/" element={<Dashboard/>} />
+                            
+                        </Routes>
+*/

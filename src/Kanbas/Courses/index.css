@@ -1,0 +1,23 @@
+.wd-course-breadcrumb-header nav {
+    vertical-align: middle;
+}
+
+.wd-course-breadcrumb-header nav ol li a {
+    color: red;
+    text-decoration: none;
+}
+
+.wd-course-breadcrumb-header nav ol li.active {
+    color: black;
+    text-decoration: none;
+}
+
+.wd-course-breadcrumb-navbar {
+    --bs-breadcrumb-divider: '>';
+    margin-top: 15px;
+}
+
+.wd-course-header-bars {
+    margin-right: 10px;
+    vertical-align: middle;
+}

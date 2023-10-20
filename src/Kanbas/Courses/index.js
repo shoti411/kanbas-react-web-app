@@ -1,3 +1,6 @@
+import './../../styles.css';
+import './Modules/index.css';
+import './index.css';
 import db from "../Database";
 import { Navigate, Route, Routes, useParams } from "react-router-dom";
 import CourseNavigation from "./CourseNavigation";
@@ -10,21 +13,29 @@ import { AiOutlineMenu } from "react-icons/ai";
 
 
 function Courses() {
-  const { courseId } = useParams(); // get course id from hyperlink
-  const course = db.courses.find((course) => course._id === courseId); // get specific course from courses in database
+  const { courseid } = useParams(); // get courseid from hyperlink
+  const courseFromCourseId = db.courses.find((course) => course._id === courseid); // get specific course from courses in database
   const menuIconStyle = {color: "red"};
   const menuIconSize = 16; // 16 px size
   
-  console.log(course.name);
   return (
     <div>
-    
-      <h1><AiOutlineMenu style={menuIconStyle} size={menuIconSize}/> Course {course.name}</h1>
-      
-      <CourseNavigation />
-      <div>
+      <div className="wd-course-breadcrumb-header">
+        <AiOutlineMenu style={menuIconStyle} size={menuIconSize} className="wd-course-header-bars"/>
+        <nav className="wd-course-breadcrumb-navbar" aria-label="breadcrumb">
+          <ol className="breadcrumb">
+            <li className="breadcrumb-item"><a href="#">{courseid} {courseFromCourseId.name}</a></li>
+            <li className="breadcrumb-item" aria-current="page">{courseFromCourseId.startDate} to {courseFromCourseId.endDate} term</li>
+            <li className="breadcrumb-item"><a href="#">Sec 01</a></li>
+            <li className="breadcrumb-item active" aria-current="page">Home</li>
+          </ol>
+        </nav>
+      </div>
+      <hr />
+      <div class="wd-course-page-and-navigation">
+        <CourseNavigation />
         <div
-          className="overflow-y-scroll position-fixed bottom-0 end-0"
+          className="d-flex overflow-y-scroll bottom-0 end-0 container"
           style={{
             left: "320px",
             top: "50px",
