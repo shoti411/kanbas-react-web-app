@@ -5,6 +5,7 @@ import Styles from "./Styles";
 import ConditionalOutput from "./ConditionalOutput";
 import TodoItem from "./todos/TodoItem";
 import TodoList from "./todos/TodoList";
+import { useSelector } from "react-redux";
 
 function Assignment3() {
     var functionScoped = 2;
@@ -12,10 +13,10 @@ function Assignment3() {
     const constant1 = functionScoped - blockScoped;
     let numberArray1 = [1, 2, 3, 4, 5];
     let stringArray1 = ['string1', 'string2'];
-    
+
     let variableArray1 = [
-       functionScoped,   blockScoped,
-       constant1,        numberArray1,   stringArray1
+        functionScoped, blockScoped,
+        constant1, numberArray1, stringArray1
     ];
     // printing of all variables defined in section 2.2.7
     console.log("2.2.7 Working With Arrays");
@@ -32,7 +33,7 @@ function Assignment3() {
     console.log(index1);
     // 2.2.7.2 Adding and Removing Data to/from Arrays
     console.log("2.2.7.2 Adding and Removing Data to/from Arrays");
-    
+
     //2.2.7.3 For Loops
     console.log("2.2.7.3 For Loops");
 
@@ -51,21 +52,28 @@ function Assignment3() {
     // 2.2.7.8 The Filter Function
     console.log("2.2.7.8 The Filter Function");
 
-
+    const { todos } = useSelector((state) => state.todosReducer);
 
     return (
         <div className="container">
             <h1>Assignment 3</h1>
-            <TodoList/>
-            <TodoItem/>
-            <ConditionalOutput/>
-            <Styles/>
-            <DynamicStyling/>
-            <PathParameters/>
-            <JavaScript/>
-            
-            
-            
+            <ul className="list-group">
+                {todos.map((todo) => (
+                    <li className="list-group-item" key={todo.id}>
+                        {todo.title}
+                    </li>
+                ))}
+            </ul>
+            <TodoList />
+            <TodoItem />
+            <ConditionalOutput />
+            <Styles />
+            <DynamicStyling />
+            <PathParameters />
+            <JavaScript />
+
+
+
         </div>
     )
 }
