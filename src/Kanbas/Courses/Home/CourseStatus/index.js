@@ -5,11 +5,11 @@ import {CiCircleCheck} from 'react-icons/ci';
 
 function CourseStatus() {
     return (
-        <div className="d-xxl-block d-xl-block d-lg-block d-md-none d-sm-none wd-course-home-coursestatus-col">
+        <div className="d-xxl-block d-xl-block d-lg-block d-md-none d-sm-none wd-course-home-coursestatus-col col-3 d-flex">
             <div>
                 <h5>Course Status</h5>
             </div>
-            <div>
+            <div className="">
                 <button className="btn btn-light">
                     <FcCancel />
                     Unpublish

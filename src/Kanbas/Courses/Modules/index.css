@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row;
     justify-content: end;
-
+    line-height: normal;
 }
 
 
@@ -51,4 +51,8 @@
 
 .wd-course-home-modules-list-icons {
     padding-right: none;
+}
+
+.wd-course-modules-edit-module-block {
+    vertical-align: center;
 }

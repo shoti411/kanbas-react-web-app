@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './../../../styles.css';
+import './../../Courses/Assignments/index.css';
 import './index.css';
 import { useParams } from "react-router-dom";
 import db from "../../Database";
@@ -20,15 +21,17 @@ function ModuleList() {
   const { courseid } = useParams();
   const modules = useSelector((state) => state.modulesReducer.modules);
   const module = useSelector((state) => state.modulesReducer.module);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
 
 
   return (
     <div className="wd-course-assignments-page-container">
       <ul className="list-group wd-course-home-modules-list">
-        <li className="list-group-item">
-          <button onClick={() => dispatch(addModule({ ...module, course: courseid }))}>Add</button>
+        <li className="list-group-item wd-course-modules-edit-module-block">
+          <button onClick={() => dispatch(addModule({ ...module, course: courseid }))}>
+            Add
+          </button>
           <button
             onClick={() => dispatch(deleteModule(module._id))}>
             Delete
@@ -37,11 +40,11 @@ function ModuleList() {
             Update
           </button>
 
-          <input value={module.name}
+          <input className="form-control" value={module.name}
             onChange={(e) => dispatch(setModule({ ...module, name: e.target.value }))
             }
           />
-          <textarea value={module.description}
+          <textarea className="form-control" value={module.description}
             onChange={(e) =>
               dispatch(setModule({ ...module, description: e.target.value }))
             }
@@ -54,10 +57,6 @@ function ModuleList() {
             .filter((module) => module.course === courseid)
             .map((module, index) => (
               <li key={index} className="list-group-item-secondary">
-                <button
-                  onClick={() => dispatch(setModule(module))}>
-                  Edit
-                </button>
                 <div className="wd-course-home-modules-list-title">
                   <div className="wd-course-home-modules-list-title-left">
                     <div className="wd-course-home-modules-list-title-vertical-ellipses">
@@ -71,7 +70,12 @@ function ModuleList() {
                     <div className="float-end wd-course-home-modules-icons-container">
                       <div className="wd-course-home-modules-list-icons">
                         <CiCircleCheck />
-                        <HiEllipsisVertical />
+                        <button
+                          onClick={() => dispatch(setModule(module))}>
+                          <HiEllipsisVertical />
+                          Edit
+                        </button>
+                        
                       </div>
                     </div>
                   </div>

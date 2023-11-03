@@ -25,5 +25,10 @@
 }
 
 .wd-course-home-coursestatus-col {
-    padding-left: 10px;
+    padding-left: 20px;
+
+}
+
+.wd-course-status-publish {
+    flex-direction: row;
 }

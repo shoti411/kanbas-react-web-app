@@ -2,7 +2,7 @@ import './../../styles.css';
 import './Modules/index.css';
 import './index.css';
 import db from "../Database";
-import { Navigate, Route, Routes, useParams } from "react-router-dom";
+import { Navigate, Route, Routes, useParams, useLocation } from "react-router-dom";
 import CourseNavigation from "./CourseNavigation";
 import Modules from "./Modules";
 import Home from "./Home";
@@ -12,12 +12,19 @@ import Grades from "./Grades";
 import { AiOutlineMenu } from "react-icons/ai";
 
 
-function Courses() {
+function Courses({ courses }) {
   const { courseid } = useParams(); // get courseid from hyperlink
-  const courseFromCourseId = db.courses.find((course) => course._id === courseid); // get specific course from courses in database
+  const courseFromCourseId = courses.find((course) => course._id === courseid); // get specific course from courses in database
   const menuIconStyle = {color: "red"};
   const menuIconSize = 16; // 16 px size
+  const {pathname} = useLocation();
+  let path = pathname.split("/")[4]; // makes array of pathname - [/Kanbas/Courses/RS101/Home] -> ["","Kanbas","Courses","RS101","Home"]
+  if(path === "Zoom%20Meetings") {
+    path = "Zoom Meetings";
+  }
   
+  
+
   return (
     <div className="col">
       <div className="wd-course-breadcrumb-header d-flex">
@@ -27,7 +34,7 @@ function Courses() {
             <li className="breadcrumb-item"><a href="#">{courseid} {courseFromCourseId.name}</a></li>
             <li className="breadcrumb-item" aria-current="page">{courseFromCourseId.startDate} to {courseFromCourseId.endDate} term</li>
             <li className="breadcrumb-item"><a href="#">Sec 01</a></li>
-            <li className="breadcrumb-item active" aria-current="page">Home</li>
+            <li className="breadcrumb-item active" aria-current="page">{path}</li>
           </ol>
         </nav>
       </div>
