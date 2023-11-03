@@ -17,9 +17,10 @@ function Modules() {
   
   return (
     <div className="row wd-course-modules-page">
-      <div className="container wd-course-home-header float-end">
-        <button type="button" className="btn btn-light">Collapse All</button>
-        <button type="button" className="btn btn-light">View Progress</button>
+      <div className="wd-course-home-header">
+        <div><button type="button" className="btn btn-light">Collapse All</button></div>
+        <div><button type="button" className="btn btn-light">View Progress</button></div>
+        
 
         <div className="dropdown">
           <button className="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -32,10 +33,10 @@ function Modules() {
             <li><a className="dropdown-item" href="/#">Unpublish all modules and items</a></li>
           </ul>
         </div>
-        <button type="button" className="btn btn-danger" onClick={() => dispatch(addModule({ ...module, course: courseid }))}>
+        <div><button type="button" className="btn btn-danger" onClick={() => dispatch(addModule({ ...module, course: courseid }))}>
           <AiOutlinePlus/>
           Module
-        </button>
+        </button></div>
       </div>
       <hr />
       <ModuleList />
