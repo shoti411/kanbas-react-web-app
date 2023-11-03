@@ -31,11 +31,9 @@
 .wd-kanbas-course-page {
     display: flex;
     flex-direction: column;
-    padding-left: 100px;
 }
 
 .wd-course-page-and-navigation {
     display: flex;
     flex-direction: row;
-    width: 100%;
 }

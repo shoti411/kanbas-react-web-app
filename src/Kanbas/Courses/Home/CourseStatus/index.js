@@ -1,23 +1,29 @@
 import './../../../../styles.css';
 import './index.css';
-import {FcCancel} from "react-icons/fc";
-import {CiCircleCheck} from 'react-icons/ci';
+import { FcCancel } from "react-icons/fc";
+import { CiCircleCheck } from 'react-icons/ci';
 
 function CourseStatus() {
     return (
-        <div className="d-xxl-block d-xl-block d-lg-block d-md-none d-sm-none wd-course-home-coursestatus-col col-3 d-flex">
+        <div className="d-xxl-block d-xl-block d-lg-block d-md-none d-sm-none wd-course-home-coursestatus-col d-flex">
             <div>
                 <h5>Course Status</h5>
             </div>
-            <div className="">
-                <button className="btn btn-light">
-                    <FcCancel />
-                    Unpublish
-                </button>
-                <button className="btn btn-success wd-course-home-coursestatus-published" disabled>
-                    <CiCircleCheck />
-                    Published
-                </button>
+            <div className="wd-course-status-publish">
+                <div>
+                    <button className="btn btn-light">
+                        <FcCancel />
+                        Unpublish
+                    </button>
+                </div>
+
+                <div>
+                    <button className="btn btn-success wd-course-home-coursestatus-published" disabled>
+                        <CiCircleCheck />
+                        Published
+                    </button>
+                </div>
+
             </div>
             <div>
                 <div className="list-group">

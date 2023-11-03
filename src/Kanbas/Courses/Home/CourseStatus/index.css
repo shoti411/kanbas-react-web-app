@@ -26,9 +26,11 @@
 
 .wd-course-home-coursestatus-col {
     padding-left: 20px;
+    width: auto;
 
 }
 
 .wd-course-status-publish {
+    display: flex;
     flex-direction: row;
 }

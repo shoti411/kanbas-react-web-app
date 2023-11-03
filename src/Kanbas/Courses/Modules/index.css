@@ -1,3 +1,10 @@
+.wd-course-modules-page {
+    display: flex;
+    flex-direction: row;
+    vertical-align: middle;
+    
+}
+
 .wd-course-home-header {
     display: flex;
     flex-direction: row;
@@ -54,5 +61,5 @@
 }
 
 .wd-course-modules-edit-module-block {
-    vertical-align: center;
+    vertical-align: middle;
 }
