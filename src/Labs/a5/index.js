@@ -1,3 +1,5 @@
+import EncodingParametersInURLs from "./EncodingParametersInURLs";
+import WorkingWithObjects from "./WorkingWithObjects";
 function Assignment5() {
     return (
       <div>
@@ -7,8 +9,11 @@ function Assignment5() {
              className="list-group-item">
             Welcome
           </a>
+          
         </div>
         {/* <SimpleAPIExamples /> */}
+        <EncodingParametersInURLs/>
+        <WorkingWithObjects/>
       </div>
     );
   }
