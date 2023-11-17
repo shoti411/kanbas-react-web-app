@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 function WorkingWithArrays() {
   const API = "http://localhost:4000/a5/todos";
   const [todo, setTodo] = useState({
@@ -8,6 +9,39 @@ function WorkingWithArrays() {
     due: "2021-09-09",
     completed: false,
   });
+  const [todos, setTodos] = useState([]);
+  const fetchTodos = async () => {
+    const response = await axios.get(API);
+    setTodos(response.data);
+  };
+
+  const removeTodo = async (todo) => {
+    const response = await axios
+      .get(`${API}/${todo.id}/delete`);
+    setTodos(response.data);
+  };
+
+  const createTodo = async () => {
+    const response = await axios.get(`${API}/create`);
+    setTodos(response.data);
+  };
+
+  const fetchTodoById = async (id) => {
+    const response = await axios.get(`${API}/${id}`);
+    setTodo(response.data);
+  };
+
+  const updateTitle = async () => {
+    const response = await axios.get(
+      `${API}/${todo.id}/title/${todo.title}`);
+    setTodos(response.data);
+  };
+
+
+
+  useEffect(() => {
+    fetchTodos();
+  }, []);
 
   return (
     <div>
@@ -44,25 +78,56 @@ function WorkingWithArrays() {
       <input
         value={todo.id}
         onChange={(e) => setTodo({
-          ...todo, id: e.target.value })}
+          ...todo, id: e.target.value
+        })}
         className="form-control mb-2"
         type="number"
       />
       <input
         value={todo.title}
         onChange={(e) => setTodo({
-          ...todo, title: e.target.value })}
+          ...todo, title: e.target.value
+        })}
         className="form-control mb-2"
         type="text"
       />
       <input
         value={todo.completed}
         onChange={(e) => setTodo({
-          ...todo, completed: e.target.checked })}
+          ...todo, completed: e.target.checked
+        })}
         className="form-check-input mb-2"
         type="checkbox"
       />
       
+      <button onClick={createTodo}
+        className="btn btn-primary mb-2 w-100">
+        Create Todo
+      </button>
+      <button onClick={updateTitle}
+              className="btn btn-success mb-2 w-100">
+        Update Title
+      </button>
+
+      <ul className="list-group">
+        {todos.map((todo) => (
+          <li key={todo.id}
+            className="list-group-item">
+            <button
+              onClick={() => fetchTodoById(todo.id)}
+              className="btn btn-warning me-2 float-end" >
+              Edit
+            </button>
+            <button
+              onClick={() => removeTodo(todo)}
+              className="btn btn-danger float-end" >
+              Remove
+            </button>
+            {todo.title}
+          </li>
+        ))}
+      </ul>
+
       <h3>Updating an Item in an Array</h3>
       <a
         href={`${API}/${todo.id}/title/${todo.title}`}
@@ -72,7 +137,7 @@ function WorkingWithArrays() {
 
       <h3>Deleting from an Array</h3>
       <a href={`${API}/${todo.id}/delete`}
-         className="btn btn-primary me-2">
+        className="btn btn-primary me-2">
         Delete Todo with ID = {todo.id}
       </a>
 
@@ -81,11 +146,11 @@ function WorkingWithArrays() {
       <a
         href={`${API}/${todo.id}/completed/${todo.completed}`}
         className="btn btn-primary me-2">
-          Update Completed to {todo.completed.toString()}
+        Update Completed to {todo.completed.toString()}
       </a>
       <p>I am not sure what you want us to do for the description part, since our todos in the kanbas-node-server part do not have a description field. I am not sure if you wanted us to add it or do something else, so I skipped this extra credit part (but I do know how to implement this if we just wanted to add descriptions as a field for our todo items and update them individually like how we did the update title)
       </p>
-      
+
 
     </div>
   );
