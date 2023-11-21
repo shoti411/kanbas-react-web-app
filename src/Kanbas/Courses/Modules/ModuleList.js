@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './../../../styles.css';
 import './../../Courses/Assignments/index.css';
 import './index.css';
@@ -13,15 +13,41 @@ import {
   deleteModule,
   updateModule,
   setModule,
+  setModules,
 } from "./modulesReducer";
-
-
+import { findModulesForCourse, createModule } from "./client";
+import * as client from "./client";
 
 function ModuleList() {
   const { courseid } = useParams();
+
+
   const modules = useSelector((state) => state.modulesReducer.modules);
   const module = useSelector((state) => state.modulesReducer.module);
   const dispatch = useDispatch();
+
+  const handleAddModule = () => {
+    createModule(courseid, module).then((module) => {
+      dispatch(addModule(module));
+    });
+  };
+  const handleDeleteModule = (moduleId) => {
+    client.deleteModule(moduleId).then((status) => {
+      dispatch(deleteModule(moduleId));
+    });
+  };
+  const handleUpdateModule = async () => {
+    const status = await client.updateModule(module);
+    dispatch(updateModule(module));
+  };
+
+  useEffect(() => {
+    findModulesForCourse(courseid)
+      .then((modules) =>
+        dispatch(setModules(modules))
+    );
+  }, [courseid]);
+
 
 
 
@@ -29,14 +55,14 @@ function ModuleList() {
     <div className="wd-course-assignments-page-container">
       <ul className="list-group wd-course-home-modules-list">
         <li className="list-group-item wd-course-modules-edit-module-block">
-          <button onClick={() => dispatch(addModule({ ...module, course: courseid }))}>
+          <button onClick={handleAddModule}>
             Add
           </button>
           <button
-            onClick={() => dispatch(deleteModule(module._id))}>
+            onClick={() => handleDeleteModule(module._id.$oid)}>
             Delete
           </button>
-          <button onClick={() => dispatch(updateModule(module))}>
+          <button onClick={handleUpdateModule}>
             Update
           </button>
 
@@ -74,6 +100,10 @@ function ModuleList() {
                           onClick={() => dispatch(setModule(module))}>
                           <HiEllipsisVertical />
                           Edit
+                        </button>
+                        <button
+                          onClick={() => handleDeleteModule(module._id.$oid)}>
+                          Delete
                         </button>
                         
                       </div>
