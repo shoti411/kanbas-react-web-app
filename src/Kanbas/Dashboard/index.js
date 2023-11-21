@@ -32,6 +32,8 @@ function Dashboard({ courses, course, setCourse, addCourse,
           onChange={(e) => setCourse({ ...course, startDate: e.target.value })} title="Course Start Date"/>
         <input value={course.endDate} className="form-control" type="date"
           onChange={(e) => setCourse({ ...course, endDate: e.target.value })} title="Course End Date"/>
+        {/* <input value={course.id.$oid} className="form-control" type="text"
+          onChange={(e) => setCourse({ ...course, _id: {$oid: e.target.value} })} title="Course ID"/> */}
         <button className="btn btn-danger" onClick={addCourse} >
           <AiOutlinePlus/>
           Add
@@ -45,8 +47,8 @@ function Dashboard({ courses, course, setCourse, addCourse,
           <div className="col d-flex flex-row flex-wrap">
             {courses.map((course) => (
               <div className="card wd-dashboard-card">
-                <Link key={course._id}
-                  to={`/Kanbas/Courses/${course._id}`}
+                <Link key={course._id.$oid}
+                  to={`/Kanbas/Courses/${course._id.$oid}`}
                   className="list-group-item wd-dashboard-card-link">
                   <img className="card-img-top wd-dashboard-card-image" src="../../logo192.png" alt="Card image cap" />
                   <div className="card-body wd-dashboard-card-text-container">

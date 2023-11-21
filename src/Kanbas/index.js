@@ -21,12 +21,12 @@ function Kanbas() {
 
     const updateCourse = async (course) => {
         const response = await axios.put(
-          `${URL}/${course._id}`,
+          `${URL}/${course._id.$oid}`,
           course
         );
         setCourses(
           courses.map((c) => {
-            if (c._id === course._id) {
+            if (c._id.$oid === course._id.$oid) {
               return course;
             }
             return c;

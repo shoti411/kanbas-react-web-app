@@ -46,7 +46,7 @@ function Courses() {
         <AiOutlineMenu style={menuIconStyle} size={menuIconSize} className="wd-course-header-bars"/>
         <nav className="wd-course-breadcrumb-navbar" aria-label="breadcrumb">
           <ol className="breadcrumb">
-            <li className="breadcrumb-item"><a href="#">{courseid} {course.name}</a></li>
+            <li className="breadcrumb-item"><a href="#">{} {course.name}</a></li>
             <li className="breadcrumb-item" aria-current="page">{course.startDate} to {course.endDate} term</li>
             <li className="breadcrumb-item"><a href="#">Sec 01</a></li>
             <li className="breadcrumb-item active" aria-current="page">{path}</li>
@@ -54,7 +54,7 @@ function Courses() {
         </nav>
       </div>
       <hr />
-      <div class="wd-course-page-and-navigation d-flex">
+      <div className="wd-course-page-and-navigation d-flex">
         <CourseNavigation />
         <div
           className="d-flex overflow-y-scroll bottom-0 end-0 container"
