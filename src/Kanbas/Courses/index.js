@@ -10,11 +10,26 @@ import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/AssignmentEditor";
 import Grades from "./Grades";
 import { AiOutlineMenu } from "react-icons/ai";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 
-function Courses({ courses }) {
+function Courses() {
   const { courseid } = useParams(); // get courseid from hyperlink
-  const courseFromCourseId = courses.find((course) => course._id === courseid); // get specific course from courses in database
+  const URL = "http://localhost:4000/api/courses";
+  const [course, setCourse] = useState({});
+  const findCourseById = async (courseid) => {
+    const response = await axios.get(
+      `${URL}/${courseid}`
+    );
+    setCourse(response.data);
+  };
+
+  // const courseFromCourseId = courses.find((course) => course._id === courseid); // get specific course from courses in database
+  useEffect(() => {
+    findCourseById(courseid);
+  }, [courseid]);
+
   const menuIconStyle = {color: "red"};
   const menuIconSize = 16; // 16 px size
   const {pathname} = useLocation();
@@ -31,8 +46,8 @@ function Courses({ courses }) {
         <AiOutlineMenu style={menuIconStyle} size={menuIconSize} className="wd-course-header-bars"/>
         <nav className="wd-course-breadcrumb-navbar" aria-label="breadcrumb">
           <ol className="breadcrumb">
-            <li className="breadcrumb-item"><a href="#">{courseid} {courseFromCourseId.name}</a></li>
-            <li className="breadcrumb-item" aria-current="page">{courseFromCourseId.startDate} to {courseFromCourseId.endDate} term</li>
+            <li className="breadcrumb-item"><a href="#">{courseid} {course.name}</a></li>
+            <li className="breadcrumb-item" aria-current="page">{course.startDate} to {course.endDate} term</li>
             <li className="breadcrumb-item"><a href="#">Sec 01</a></li>
             <li className="breadcrumb-item active" aria-current="page">{path}</li>
           </ol>

@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import {AiOutlinePlus} from 'react-icons/ai';
 import { FaRegFileLines } from 'react-icons/fa6';
 import { BsTrashFill } from 'react-icons/bs';
-function Dashboard({ courses, course, setCourse, addNewCourse,
+function Dashboard({ courses, course, setCourse, addCourse,
   deleteCourse, updateCourse }) {
 
   
@@ -19,20 +19,20 @@ function Dashboard({ courses, course, setCourse, addNewCourse,
         <h1>Dashboard</h1>
         <hr />
       </div>
-      <div class="container-fluid wd-dashboard-published-courses-container">
+      <div className="container-fluid wd-dashboard-published-courses-container">
         <div className="row d-flex flex-row flex-wrap">
           <h2>Published Courses ({courses.length})</h2>
           <hr />
         </div>
         <input value={course.name} className="form-control"
-          onChange={(e) => setCourse({ ...course, name: e.target.value })} />
+          onChange={(e) => setCourse({ ...course, name: e.target.value })} title="Course Name"/>
         <input value={course.number} className="form-control"
-          onChange={(e) => setCourse({ ...course, number: e.target.value })} />
+          onChange={(e) => setCourse({ ...course, number: e.target.value })} title="Course Number"/>
         <input value={course.startDate} className="form-control" type="date"
-          onChange={(e) => setCourse({ ...course, startDate: e.target.value })} />
+          onChange={(e) => setCourse({ ...course, startDate: e.target.value })} title="Course Start Date"/>
         <input value={course.endDate} className="form-control" type="date"
-          onChange={(e) => setCourse({ ...course, endDate: e.target.value })} />
-        <button className="btn btn-danger" onClick={addNewCourse} >
+          onChange={(e) => setCourse({ ...course, endDate: e.target.value })} title="Course End Date"/>
+        <button className="btn btn-danger" onClick={addCourse} >
           <AiOutlinePlus/>
           Add
         </button>
@@ -73,7 +73,7 @@ function Dashboard({ courses, course, setCourse, addNewCourse,
                         <button className="btn btn-danger"
                           onClick={(event) => {
                             event.preventDefault();
-                            deleteCourse(course._id);
+                            deleteCourse(course);
                           }}>
                           <BsTrashFill/>
                           Delete

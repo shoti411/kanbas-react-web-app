@@ -5,31 +5,65 @@ import { Route, Routes, Navigate } from "react-router";
 import store from "./store";
 import { Provider } from "react-redux";
 import db from "./Database";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function Kanbas() {
-    const [courses, setCourses] = useState(db.courses);
+    const [courses, setCourses] = useState([]);
     const [course, setCourse] = useState({
+        _id: {$oid: "1"},
         name: "New Course", number: "New Number",
         startDate: "2023-09-10", endDate: "2023-12-15",
+        department: "N1", credits: 1, description: "none",
     });
-    const addNewCourse = () => {
-        setCourses([...courses, { ...course, _id: new Date().getTime().toString() }]);
-    };
-    const deleteCourse = (courseId) => {
-        setCourses(courses.filter((course) => course._id !== courseId));
-    };
-    const updateCourse = () => {
-        setCourses(
-            courses.map((c) => {
-                if (c._id === course._id) {
-                    return course;
-                } else {
-                    return c;
-                }
-            })
+    
+    const URL = "http://localhost:4000/api/courses";
+
+    const updateCourse = async (course) => {
+        const response = await axios.put(
+          `${URL}/${course._id}`,
+          course
         );
+        setCourses(
+          courses.map((c) => {
+            if (c._id === course._id) {
+              return course;
+            }
+            return c;
+          })
+        );
+        setCourse({ name: "", number: "" });
+      };
+    
+
+    const deleteCourse = async (course) => {
+        const response = await axios.delete(
+          `${URL}/${course._id}`
+        );
+        setCourses(courses.filter(
+          (c) => c._id !== course._id));
+      };
+    
+
+    const addCourse = async () => {
+        const response = await axios.post(URL, course);
+        setCourses([
+        //   {_id: {$oid: response.data}, name: course.name, number: course.number, startDate: course.startDate, endDate: course.endDate, department: course.department, credits: course.credits, description: course.description},
+            response.data,
+          ...courses,
+        ]);
+        setCourse( { name: "", number: "" } );
+      };
+    
+    const findAllCourses = async () => {
+      const response = await axios.get(URL);
+      setCourses(response.data);
     };
+
+
+    useEffect(() => {
+      findAllCourses();
+    }, []);
 
     return (
         <Provider store={store}>
@@ -46,7 +80,7 @@ function Kanbas() {
                                 courses={courses}
                                 course={course}
                                 setCourse={setCourse}
-                                addNewCourse={addNewCourse}
+                                addCourse={addCourse}
                                 deleteCourse={deleteCourse}
                                 updateCourse={updateCourse} />
                         } />
