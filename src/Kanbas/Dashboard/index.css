@@ -1,4 +1,10 @@
 
+.wd-dashboard-card-grid {
+    display: flex;
+    flex-direction: row;
+    
+}
+
 .wd-dashboard-published-courses-container {
     display: flex;
     flex-direction: column;
