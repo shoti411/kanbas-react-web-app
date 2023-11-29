@@ -2,6 +2,9 @@ import axios from "axios";
 
 const KEY = process.env.REACT_APP_YELP_API_KEY;
 const YELP_API = "https://api.yelp.com/v3/";
+
+
+
 //https://api.napster.com/v2.2
 // const NAPSTER_IMAGE_URL = "https://api.napster.com/imageserver/v2";
 
