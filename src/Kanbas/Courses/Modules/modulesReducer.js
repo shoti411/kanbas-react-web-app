@@ -33,7 +33,7 @@ const modulesSlice = createSlice({
         },
         updateModule: (state, action) => {
             state.modules = state.modules.map((module) => {
-                if (module._id === action.payload._id) {
+                if (module._id.$oid === action.payload._id.$oid) {
                     return action.payload;
                 } else {
                     return module;

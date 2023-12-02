@@ -46,7 +46,7 @@ function ModuleList() {
       .then((modules) =>
         dispatch(setModules(modules))
     );
-  }, [courseid]);
+  }, [courseid, modules, module]);
 
 
 

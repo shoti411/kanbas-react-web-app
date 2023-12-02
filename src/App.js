@@ -4,6 +4,7 @@ import Kanbas from "./Kanbas";
 import {HashRouter} from "react-router-dom";
 import {Routes, Route, Navigate} from "react-router";
 import Notes from "./notes";
+import Project from "./project";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/Labs/*" element={<Labs/>}/>
         <Route path="/Kanbas/*" element={<Kanbas/>}/>
         <Route path="/notes/*" element={<Notes/>} />
+        <Route path="/project/*" element={<Project/>} />
       </Routes>
       </div>
     </HashRouter>
