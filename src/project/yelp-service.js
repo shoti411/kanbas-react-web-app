@@ -13,9 +13,14 @@ const YELP_API = "https://api.yelp.com/v3/";
 // /images/300x300.jpg`;
 
 export const fullTextSearch = async (text) => {
+    
   const response = await axios.get(
-    `${YELP_API}/businesses/search/${text}?apikey=${KEY}`
-  );
+    `${YELP_API}/businesses/search/${text}`,
+    {
+        headers: {
+            Authorization: `Bearer ${process.env.REACT_APP_YELP_API_KEY}`
+        },
+    });
   return response.data;
 };
 
