@@ -5,7 +5,7 @@ function Account() {
   const { id } = useParams();
   const [account, setAccount] = useState(null);
   const findUserById = async (id) => {
-    const user = await client.findUserById(id); // so problem here not getting found
+    const user = await client.findUserById(id);
     setAccount(user);
   };
 
@@ -19,7 +19,7 @@ function Account() {
   };
   const signout = async () => {
     await client.signout();
-    navigate("Kanbas/signin");
+    navigate("/Kanbas/signin");
   };
 
   
@@ -35,7 +35,14 @@ function Account() {
   return (
     <div className="w-50">
       <h1>Account</h1>
-      {JSON.stringify(account, null, 2)}
+      {/* {JSON.stringify(account, null, 2)} */}
+      {!account && (
+        <div>
+          <Link className="btn btn-primary" to="/Kanbas/signin">Signin</Link>
+          <h3>OR</h3>
+          <Link className="btn btn-secondary" to="/Kanbas/signup">Signup</Link>
+        </div>
+      )}
       {account && (
         <div>
           <input value={account.password}
