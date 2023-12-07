@@ -10,6 +10,7 @@ import db from "./Database";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import UserTable from "../users/table";
+import Signup from "../users/signup";
 
 
 
@@ -79,9 +80,10 @@ function Kanbas() {
                     <KanbasNavigation />
                 </div>
                 <div className="d-flex">
-                    {<Routes>
+                    <Routes>
                         <Route path="/" element={<Navigate to="Dashboard" />} />
                         <Route path="/signin" element={<Signin />} />
+                        <Route path="/signup" element={<Signup />} />
                         <Route path="/account" element={<Account />} />
                         <Route path="/account/:id" element={<Account />} />
                         <Route path="/admin/users" element={<UserTable />} />
@@ -104,7 +106,7 @@ function Kanbas() {
                         <Route path="Studio/*" element={<h1>Studio</h1>} />
                         <Route path="Commons/*" element={<h1>Commons</h1>} />
                         <Route path="Help/*" element={<h1>Help</h1>} />
-                    </Routes>}
+                    </Routes>
                 </div>
             </div>
         </Provider>
