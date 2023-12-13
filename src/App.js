@@ -7,8 +7,6 @@ import Notes from "./notes";
 import Project from "./project";
 
 function App() {
-  require('dotenv').config();
-  console.log(process.env);
   return (
     <HashRouter>
       <div>
