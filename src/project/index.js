@@ -14,6 +14,7 @@ import Search from "./search";
 import Details from "./details";
 // import CurrentUser from "./users/currentUser";
 // import ProtectedAdminRoute from "./users/protectedAdminRoute";
+import { API_KEY } from "./client";
 
 function Project() {
     const [key, setKey] = useState("home");
@@ -23,8 +24,8 @@ function Project() {
                 // {/* <CurrentUser/> */}
                 <div>
                     <Nav />
-                    {/* {key} */}
-                    {/* <pre>{JSON.stringify(process.env, null, 2)}</pre> */}
+                    {JSON.stringify(process.env, null, 2)}
+                    {JSON.stringify(process.env.REACT_APP_YELP_API_KEY, null, 2)}
 
                     <Routes>
                         <Route path="/" element={<Navigate to="home" />} />
