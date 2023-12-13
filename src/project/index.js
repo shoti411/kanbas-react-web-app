@@ -12,19 +12,19 @@ import SignUp from "./signup";
 import SignIn from "./signin";
 import Search from "./search";
 import Details from "./details";
-import CurrentUser from "./users/currentUser";
-import ProtectedAdminRoute from "./users/protectedAdminRoute";
+// import CurrentUser from "./users/currentUser";
+// import ProtectedAdminRoute from "./users/protectedAdminRoute";
 
 function Project() {
     const [key, setKey] = useState("home");
-    process.env.
+    
         return(
-            <Provider store={store}>
-                <CurrentUser/>
+            // <Provider store={store}>
+                // {/* <CurrentUser/> */}
                 <div>
                     <Nav />
-                    {key}
-                    <pre>{JSON.stringify(process.env, null, 2)}</pre>
+                    {/* {key} */}
+                    {/* <pre>{JSON.stringify(process.env, null, 2)}</pre> */}
 
                     <Routes>
                         <Route path="/" element={<Navigate to="home" />} />
@@ -35,12 +35,12 @@ function Project() {
                         <Route path="login/*" element={<SignIn />} />
                         <Route path="search/*" element={<Search />} />
                         <Route path="details/*" element={<Details />} />
-                        <ProtectedAdminRoute>
+                        {/* <ProtectedAdminRoute>
                         <Route path="users/*" element={<Details />} />  
-                        </ProtectedAdminRoute>
+                        </ProtectedAdminRoute> */}
                     </Routes>
                 </div>
-            </Provider>
+            // </Provider>
         )
 }
 
