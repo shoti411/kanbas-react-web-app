@@ -1,17 +1,36 @@
-import * as yelp from '../yelp-service.js';
-import { useState } from 'react';
+import * as client from '../yelp-service.js';
+import React, { useEffect, useState } from 'react';
+import { Link } from "react-router-dom";
+import Results from './results.js';
 import { CiSearch } from "react-icons/ci";
-import { API_KEY } from '../client.js';
 
 
 function Search() {
     
-    const [searchTerm, setSearchTerm] = useState('');
+    const [searchTerm, setSearchTerm] = useState("");
+    const [results, setResults] = useState(null);
+
+    const fetchBusinesses = async () => {
+        // try {
+        // const searchResults = await client.fullTextSearch(searchTerm);
+        // setResults(searchResults);
+        // }
+        // catch (error) {
+        //     console.log(error);
+        // }
+        const searchResults = await client.fullTextSearch(searchTerm);
+        setResults(searchResults);
+    };
+
+    useEffect(() => {
+        fetchBusinesses("");
+    }, []);
+
     return ( 
         <div>
             <h1>Search</h1>
-            {API_KEY}
-            <div className="d-flex">
+            {client.KEY}
+            <div className="d-flex container-fluid">
                 <input
                     className="form-control w-75"
                     type="text"
@@ -21,10 +40,13 @@ function Search() {
                     onChange={(event) => {
                         setSearchTerm(event.target.value);
                     }} />
-                    <button className="btn btn-info">
+                    <button onClick={fetchBusinesses} className="btn btn-info">
                         <CiSearch/>
                     </button>
             </div>
+            
+            {JSON.stringify(results, null, 2)}
+            {/* <Results/> */}
             
 
         </div>

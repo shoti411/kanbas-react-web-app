@@ -7,7 +7,7 @@ function Nav() {
     const { pathname } = useLocation();
     return (
 
-        <nav className="nav nav-tabs mt-2">
+        <nav className="nav nav-tabs mt-2 d-flex container-fluid">
             <Link to="/project/home"
                 className={`nav-link ${pathname.includes("home") ? "active" : ""}`}>Home</Link>
             <Link to="/project/profile"

@@ -1,7 +1,11 @@
 import axios from "axios";
 
-const KEY = process.env.REACT_APP_YELP_API_KEY;
-const YELP_API = "https://api.yelp.com/v3/";
+export const KEY = process.env.REACT_APP_YELP_API_KEY;
+export const YELP_API = "https://api.yelp.com/v3";
+
+const request = axios.create({
+  withCredentials: true,
+});
 
 // const yelp = require('yelp-fusion');
 // const client = yelp.client(KEY);
@@ -23,26 +27,33 @@ export const fullTextSearch = async (text) => {
   //   console.log(e);
   // });
     
-  const response = await axios.get(
-    `${YELP_API}/businesses/search/${text}`,
+  const response = await request.get(
+    `${YELP_API}/businesses/search?term=${text}&sort_by=best_match&limit=20&apikey=${KEY}`,
     {
         headers: {
-            Authorization: `Bearer ${process.env.REACT_APP_YELP_API_KEY}`
+            accept: 'application/json',
+            Authorization: `Bearer l6l3Nhj4TCwAlHpW0Va2xiyu0PU-CH4_PaiTOLriAl1u_R-95Z_1xSJSlcQcxmYKcWEbGzZQnq5qm-osVL2YNwp1ov13tDJae39cqZfjg9oU8-1zPFwLtqQaI8dbZXYx`,
         },
-    });
+    })
+    .then((response) => {
+      alert();
+    })
+    .catch(function(error) {
+      console.log(error);
+    });;
   return response.data;
 };
 
-export const fetchAlbumById = async (businessId) => {
-  const response = await axios.get(
-    `${YELP_API}/businesses/search/${businessId}?apikey=${KEY}`
-  );
-  return response.data;
-};
+// export const fetchAlbumById = async (businessId) => {
+//   const response = await axios.get(
+//     `${YELP_API}/businesses/search/${businessId}?apikey=${KEY}`
+//   );
+//   return response;
+// };
 
-export const fetchTracksByAlbumId = async (businessId) => {
-  const response = await axios.get(
-    `${YELP_API}/businesses/search/${businessId}?apikey=${KEY}`
-  );
-  return response.data;
-};
+// export const fetchTracksByAlbumId = async (businessId) => {
+//   const response = await axios.get(
+//     `${YELP_API}/businesses/search/${businessId}?apikey=${KEY}`
+//   );
+//   return response.data;
+// };
