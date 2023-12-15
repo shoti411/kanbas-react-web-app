@@ -14,15 +14,17 @@ import Signin from "./signin";
 import Signup from "./signup";
 import Account from "./account";
 import UserTable from "./users/table";
-// import CurrentUser from "./users/currentUser";
-// import ProtectedAdminRoute from "./users/protectedAdminRoute";
+import UserDetails from "./users/details";
+import CurrentUser from "./users/currentUser";
+import ProtectedAdminRoute from "./users/protectedAdminRoute";
+
 
 function Project() {
     const [key, setKey] = useState("home");
     
         return(
-            // <Provider store={store}>
-                // {/* <CurrentUser/> */}
+             <Provider store={store}>
+                <CurrentUser/>
                 <div className="p-back">
                     <Nav />
                     {/* {JSON.stringify(process.env, null, 2)}
@@ -34,18 +36,24 @@ function Project() {
                         <Route path="/signin" element={<Signin />} />
                         <Route path="/signup" element={<Signup />} />
                         <Route path="/account" element={<Account />} />
-                        <Route path="/account/:id" element={<Account />} />
+                        <Route path="/users/:id" element={<UserDetails />} />
                         <Route path="/admin/users" element={<UserTable />} />
                         {/* <Route path="profile/*" element={<Profile />} /> */}
                         <Route path="signup/*" element={<Signup />} />
                         <Route path="search/*" element={<Search />} />
                         <Route path="details/*" element={<Details />} />
-                        {/* <ProtectedAdminRoute>
-                        <Route path="users/*" element={<Details />} />  
-                        </ProtectedAdminRoute> */}
+                        <Route
+                            path="/users"
+                            element={
+                                <ProtectedAdminRoute>
+                                    <UserTable />
+                                </ProtectedAdminRoute>
+                            }
+                        />
+                        <Route path="/users/:id" element={<UserDetails />} />
                     </Routes>
                 </div>
-            // </Provider>
+             </Provider>
         )
 }
 

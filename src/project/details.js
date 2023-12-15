@@ -4,6 +4,7 @@ import { useParams } from "react-router";
 // import * as client from "./client";
 import * as userClient from "./users/client.js";
 import * as likesClient from "./likes/client.js";
+import './styles.css';
 
 function Details() {
     const [currentUser, setCurrentUser] = useState(null);
@@ -31,10 +32,10 @@ function Details() {
         fetchUser();
     })
     return ( 
-        <div>
+        <div className="container">
             {
                 currentUser && (
-                    <div>
+                    <div className="float-end">
                         <button onClick={currentUserlikesBusiness} className="btn btn-primary">Like</button>
                     </div>
                 )

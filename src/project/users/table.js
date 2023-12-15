@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BsTrash3Fill, BsFillCheckCircleFill, BsPencil, BsPlusCircleFill } from "react-icons/bs";
 import { Link, Navigate } from "react-router-dom";
 import * as client from "./client";
+import './table.css';
 function UserTable() {
   const [users, setUsers] = useState([]);
   const [currentUser, setCurrentUser] = useState(null);
@@ -57,10 +58,10 @@ function UserTable() {
     fetchUser();
   }, []);
   return (
-    <div>
+    <div className="container">
       {currentUser && currentUser.role === "ADMIN" && (<div>
       <h1>User List</h1>
-      <table className="table">
+      <table className="table p-table">
         <thead>
           <tr>
             <td>
@@ -95,7 +96,7 @@ function UserTable() {
           {users.map((user) => (
             <tr key={user._id}>
               <td>        
-              <Link to={`/project/account/${user._id}`}>
+              <Link to={`/project/users/${user._id}`}>
                 {user.username}
               </Link>
               </td>

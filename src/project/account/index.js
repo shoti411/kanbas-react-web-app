@@ -1,107 +1,71 @@
-import * as client from "./../users/client.js";
-import { useState, useEffect } from "react";
-import { useNavigate, Link, useParams } from "react-router-dom";
-import * as followsClient from "./../follows/client.js";
+import * as client from "./../users/client";
+import React, { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import * as followsClient from "./../follows/client";
+import { setCurrentUser } from "./../users/reducer";
+import { useDispatch } from "react-redux";
 // import Following from "../follows/index.js";
 // import * as likesClient from "../"
 function Account() {
-    const { id } = useParams();
-    const [account, setAccount] = useState(null);
-    const [likes, setLikes] = useState([]);
+    const [user, setUser] = useState(null);
     const [followers, setFollowers] = useState([]);
-    const [followed, setFollowed] = useState([]);
-    const findUserById = async (id) => {
-        const user = await client.findUserById(id);
-        setAccount(user);
-    };
+    const [following, setFollowing] = useState([]);
+    const dispatch = useDispatch();
 
     const navigate = useNavigate();
-    const fetchAccount = async () => {
-        // try {
-        //     const account = await client.account();
-        //     setAccount(account);
-        // } catch (error) {
-        //     navigate("/project/signin");
-        // }
-        const account = await client.account();
-        setAccount(account);
-
+    const fetchUser = async () => {
+        try {
+            const user = await client.account();
+            setUser(user);
+            fetchFollowers(user._id);
+            fetchFollowing(user._id);
+        } catch (error) {
+            navigate("/project/signin");
+        }
     };
-    const save = async () => {
-        await client.updateUser(account);
-    };
-    const signout = async () => {
+    const signOut = async () => {
         await client.signout();
+        dispatch(setCurrentUser(null));
         navigate("/project/signin");
     };
-    const deleteUser = async () => {
-        const status = await client.deleteUser(id, account);
-        navigate("/project/users");
+    const updateUser = async () => {
+        await client.updateUser(user._id, user);
     };
 
-    const followUser = async () => {
-        const status = await followsClient.createUserFollowsUser(id);
-    };
-
-    const fetchFollowers = async () => {
-        const followers = await followsClient.findFollowersOfUser(id);
+    const fetchFollowers = async (userId) => {
+        const followers = await followsClient.findFollowersOfUser(userId);
         setFollowers(followers);
-    }
+    };
 
-    const fetchFollowed = async () => {
-        const followed = await followsClient.findFollowedUsersOfUser(id);
-        setFollowed(followed);
-    }
+    const fetchFollowing = async (userId) => {
+        const following = await followsClient.findFollowedUsersOfUser(userId);
+        setFollowing(following);
+    };
 
-
-
-    useEffect(() => {
-        if (id) {
-            findUserById(id);
-            fetchFollowers();
-            fetchFollowed();
-        } else {
-            fetchAccount();
-        }
-
-    }, [id, ]);
+    useState(() => {
+        fetchUser();
+    }, []);
 
     return (
         <div className="container-fluid container">
             <h1>Account</h1>
             <div className="container-fluid">
                 {/* {JSON.stringify(account, null, 2)} */}
-                {!account && (
+                {!user && (
                     <div>
                         <Link className="btn btn-primary" to="/project/signin">Signin</Link>
                         <h3>OR</h3>
                         <Link className="btn btn-secondary" to="/project/signup">Signup</Link>
                     </div>
                 )}
-                {account && (
+                {user && (
                     <div className="container">
-                        {/* if no id in params or account._id is id in params then show follow button */
-                            
-                        }
-                        {id && (
-                            <>
-                                {(id === account._id) && (
-                                    <>
-                                    {console.log(id === account._id)}
-                                        <div className="float-end">
-                                            <button onClick={followUser} className="btn btn-success">Follow</button>
-                                        </div>
-                                    </>
-                                )}
-
-                            </>
-                        )}
 
                         <label className="">
                             First Name:
-                            <input className="form-control" value={account.firstName}
-                                onChange={(e) => setAccount({
-                                    ...account,
+                            <input className="form-control" value={user.firstName}
+                                onChange={(e) => setUser({
+                                    ...user,
                                     firstName: e.target.value
                                 })} />
                         </label>
@@ -109,18 +73,18 @@ function Account() {
 
                         <label className="">
                             Last Name:
-                            <input className="form-control" value={account.lastName}
-                                onChange={(e) => setAccount({
-                                    ...account,
+                            <input className="form-control" value={user.lastName}
+                                onChange={(e) => setUser({
+                                    ...user,
                                     lastName: e.target.value
                                 })} />
                         </label>
                         <div></div>
                         <label className="">
                             Date of Birth:
-                            <input className="form-control" value={account.dob}
-                                onChange={(e) => setAccount({
-                                    ...account,
+                            <input className="form-control" value={user.dob}
+                                onChange={(e) => setUser({
+                                    ...user,
                                     dob: e.target.value
                                 })} />
                         </label>
@@ -128,9 +92,9 @@ function Account() {
                         <div></div>
                         <label className="">
                             Email:
-                            <input className="form-control" value={account.email}
-                                onChange={(e) => setAccount({
-                                    ...account,
+                            <input className="form-control" value={user.email}
+                                onChange={(e) => setUser({
+                                    ...user,
                                     email: e.target.value
                                 })} />
                         </label>
@@ -139,8 +103,8 @@ function Account() {
                         <label className="">
                             Role:
 
-                            <select className="dropdown" value={account.role} onChange={(e) => setAccount({
-                                ...account,
+                            <select className="dropdown" value={user.role} onChange={(e) => setUser({
+                                ...user,
                                 role: e.target.value
                             })}>
                                 <option value="USER">User</option>
@@ -153,52 +117,65 @@ function Account() {
 
                         <label className="">
                             Username:
-                            <input className="form-control" value={account.username}
-                                onChange={(e) => setAccount({
-                                    ...account,
+                            <input className="form-control" value={user.username}
+                                onChange={(e) => setUser({
+                                    ...user,
                                     username: e.target.value
                                 })} />
                         </label>
                         <label className="">
                             Password:
-                            <input className="form-control" value={account.password}
-                                onChange={(e) => setAccount({
-                                    ...account,
+                            <input className="form-control" value={user.password}
+                                onChange={(e) => setUser({
+                                    ...user,
                                     password: e.target.value
                                 })} />
                         </label>
                         <div></div>
-                        <div className="vertical-center">
-                            <button className="btn btn-primary" onClick={save}>
+                        <div className="container">
+                            <button className="btn btn-primary" onClick={updateUser}>
                                 Save
                             </button>
+                            <button className="btn btn-outline-dark" onClick={signOut}>
+                                Signout
+                            </button>
                         </div>
-
+                        {/* {user?.role === "ADMIN" && (<Link to="/project/admin/users" className="btn btn-warning w-100">
+                            Users
+                        </Link>)} */}
+                        <h3>Followers</h3>
                         <div className="list-group">
-                            <h3>Followers</h3>
-                            {followers.map((follows, index) => (
-                                <Link key={index} className="list-group-item" to={`/project/users/${follows.follower._id}`}>{follows.follower.username}</Link>
+                            {followers.map((follows) => (
+                                <Link
+                                    to={`/project/users/${follows.follower._id}`}
+                                    key={follows._id}
+                                    className="list-group-item"
+                                >
+                                    {follows.follower.firstName} {follows.follower.lastName} (@
+                                    {follows.follower.username})
+                                </Link>
                             ))}
                         </div>
-
-                        {account && account.role === "ADMIN" && (<Link to="/project/admin/users" className="btn btn-warning w-100">
-                            Users
-                        </Link>)}
-                        <button className="btn btn-outline-dark" onClick={signout}>
-                            Signout
-                        </button>
-                        {/* <Following/> */}
 
                         <div className="list-group">
                             <h3>Following</h3>
-                            {followed.map((follow, index) => (
-                                <Link key={index} className="list-group-item" to={`/project/users/${follow.followed._id}`}>{follow.followed.username}</Link>
-                            ))}
+                            <div className="list-group">
+                                {following.map((follows) => (
+                                    <Link
+                                        key={follows.followed._id}
+                                        className="list-group-item"
+                                        to={`/project/users/${follows.followed._id}`}
+                                    >
+                                        {follows.followed.firstName} {follows.followed.lastName} (@
+                                        {follows.followed.username})
+                                    </Link>
+                                ))}
+                            </div>
                         </div>
                     </div>
 
-                    
-                    
+
+
                 )}
             </div>
 
