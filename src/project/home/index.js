@@ -1,5 +1,5 @@
 import Nav from "../nav";
-import * as client from "./../yelp-service.js";
+import * as client from "../googlemaps-service.js";
 
 function Home() {
     return ( 

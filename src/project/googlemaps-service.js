@@ -1,11 +1,11 @@
 import axios from "axios";
 
-export const KEY = process.env.REACT_APP_YELP_API_KEY;
-export const YELP_API = "https://api.yelp.com/v3";
+export const KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+export const GOOGLE_MAPS_API = "https://maps.googleapis.com/maps/api/place/textsearch"
 
-const request = axios.create({
-  withCredentials: true,
-});
+// const request = axios.create({
+//   withCredentials: true,
+// });
 
 // const yelp = require('yelp-fusion');
 // const client = yelp.client(KEY);
@@ -27,20 +27,14 @@ export const fullTextSearch = async (text) => {
   //   console.log(e);
   // });
     
-  const response = await request.get(
-    `${YELP_API}/businesses/search?term=${text}&sort_by=best_match&limit=20&apikey=${KEY}`,
-    {
-        headers: {
-            accept: 'application/json',
-            Authorization: `Bearer l6l3Nhj4TCwAlHpW0Va2xiyu0PU-CH4_PaiTOLriAl1u_R-95Z_1xSJSlcQcxmYKcWEbGzZQnq5qm-osVL2YNwp1ov13tDJae39cqZfjg9oU8-1zPFwLtqQaI8dbZXYx`,
-        },
-    })
-    .then((response) => {
-      alert();
-    })
-    .catch(function(error) {
-      console.log(error);
-    });;
+  const response = await axios.get(
+    `${GOOGLE_MAPS_API}/json?query=${text}&key=${KEY}`);
+    // .then((response) => {
+    //   alert();
+    // })
+    // .catch(function(error) {
+    //   console.log(error);
+    // });
   return response.data;
 };
 

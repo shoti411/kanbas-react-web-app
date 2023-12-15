@@ -11,7 +11,7 @@ function Nav() {
 
     }, [currentUser])
     return (
-        <div className="container p-navback">
+        <div className="container p-navback fixed-top">
             <nav className="navbar navbar-light mt-2 d-flex container-fluid p-nav">
                 <a className="navbar-brand">Business Reviewer</a>
 
