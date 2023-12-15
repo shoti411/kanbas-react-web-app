@@ -2,6 +2,7 @@ import * as client from "./../users/client.js";
 import { useState, useEffect } from "react";
 import { useNavigate, Link, useParams } from "react-router-dom";
 import * as followsClient from "./../follows/client.js";
+// import Following from "../follows/index.js";
 // import * as likesClient from "../"
 function Account() {
     const { id } = useParams();
@@ -63,7 +64,7 @@ function Account() {
             fetchAccount();
         }
 
-    }, [id]);
+    }, [id, ]);
 
     return (
         <div className="container-fluid container">
@@ -186,7 +187,18 @@ function Account() {
                         <button className="btn btn-outline-dark" onClick={signout}>
                             Signout
                         </button>
+                        {/* <Following/> */}
+
+                        <div className="list-group">
+                            <h3>Following</h3>
+                            {followed.map((follow, index) => (
+                                <Link key={index} className="list-group-item" to={`/project/users/${follow.followed._id}`}>{follow.followed.username}</Link>
+                            ))}
+                        </div>
                     </div>
+
+                    
+                    
                 )}
             </div>
 
