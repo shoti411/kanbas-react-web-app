@@ -50,7 +50,7 @@ function Search() {
                             <div className="card-body">
                                 <h5 className="card-title">{business.name}</h5>
                                 <div>
-                                    {business.opening_hours}
+                                    {business?.opening_hours}
                                 </div>
                                 <div className="row justify-content-between">
                                 </div>
