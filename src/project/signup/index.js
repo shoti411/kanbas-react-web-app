@@ -19,12 +19,14 @@ function Signup() {
       <h1>Signup</h1>
       {error && <div>{error}</div>}
       <input
+        className="form-control"
         value={credentials.username}
         placeholder="enter username here"
         onChange={(e) => setCredentials({
           ...credentials,
           username: e.target.value })} />
       <input
+        className="form-control"
         value={credentials.password}
         placeholder="enter password here"
         onChange={(e) => setCredentials({
