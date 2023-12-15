@@ -127,6 +127,15 @@ function Account() {
                             </select>
                         </label>
                         <div></div>
+                        
+                        <label className="">
+                            Username:
+                            <input className="form-control" value={account.username}
+                                onChange={(e) => setAccount({
+                                    ...account,
+                                    username: e.target.value
+                                })} />
+                        </label>
                         <label className="">
                             Password:
                             <input className="form-control" value={account.password}
