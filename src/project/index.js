@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route, Navigate } from "react-router";
 import { Provider } from "react-redux";
+import './index.css';
 // import { Link } from "react-router-dom";
 // import * as client from "./yelp-service";
 import store from "./store";
@@ -22,7 +23,7 @@ function Project() {
         return(
             // <Provider store={store}>
                 // {/* <CurrentUser/> */}
-                <div>
+                <div className="p-back">
                     <Nav />
                     {/* {JSON.stringify(process.env, null, 2)}
                     {JSON.stringify(process.env.REACT_APP_YELP_API_KEY, null, 2)} */}

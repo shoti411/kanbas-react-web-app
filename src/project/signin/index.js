@@ -9,7 +9,7 @@ function Signin() {
     navigate("/project/account");
   };
   return (
-    <div>
+    <div className="container">
       <h1>Signin</h1>
       <input className="form-control" placeholder="username" value={credentials.username} onChange={(e) => setCredentials({...credentials, username: e.target.value})}/>
       <input className="form-control" placeholder="password" value={credentials.password} onChange={(e) => setCredentials({...credentials, password: e.target.value})}/>

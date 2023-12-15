@@ -4,7 +4,7 @@ import * as client from "./../yelp-service.js";
 function Home() {
     return ( 
         
-        <div>
+        <div className="container container-fluid">
             <h1>Home</h1>
             
             

@@ -58,7 +58,7 @@ function Account() {
     }, [id]);
 
     return (
-        <div className="container-fluid">
+        <div className="container-fluid container">
             <h1>Account</h1>
             <div className="container-fluid">
                 {/* {JSON.stringify(account, null, 2)} */}

@@ -116,7 +116,7 @@ function UserTable() {
       {currentUser && currentUser.role !== "ADMIN" && (
         <h2>Unauthorized</h2>
       )}
-      {!currentUser && <Navigate to="/project/signin" />}
+      {/* {!currentUser && <Navigate to="/project/signin" />} */}
     </div>
   );
 }

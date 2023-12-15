@@ -1,0 +1,6 @@
+.p-back {
+    background-color: burlywood;
+    display:flex;
+    flex-direction: column;
+    
+}

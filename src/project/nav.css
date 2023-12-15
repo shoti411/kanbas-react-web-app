@@ -1,0 +1,15 @@
+
+.p-nav div.nav-item.active{
+    color:chocolate;
+    background-color: azure;
+
+}
+
+.p-nav div.nav-item {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.p-navback {
+    background-color: blanchedalmond;
+}
