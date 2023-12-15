@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { BsTrash3Fill, BsFillCheckCircleFill, BsPencil, BsPlusCircleFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import * as client from "./client";
 function UserTable() {
   const [users, setUsers] = useState([]);
+  const [currentUser, setCurrentUser] = useState(null);
   const [user, setUser] = useState({ username: "", password: "", role: "USER" });
+
+  const fetchUser = async () => {
+    const user = await client.account();
+    setCurrentUser(user);
+  }
+
   const selectUser = async (user) => {
     try {
       const u = await client.findUserById(user._id);
@@ -44,9 +51,14 @@ function UserTable() {
     const users = await client.findAllUsers();
     setUsers(users);
   };
-  useEffect(() => { fetchUsers(); }, []);
+
+  useEffect(() => { 
+    fetchUsers();
+    fetchUser();
+  }, []);
   return (
     <div>
+      {currentUser && currentUser.role === "ADMIN" && (<div>
       <h1>User List</h1>
       <table className="table">
         <thead>
@@ -100,6 +112,11 @@ function UserTable() {
             </tr>))}
         </tbody>
       </table>
+      </div>)}
+      {currentUser && currentUser.role !== "ADMIN" && (
+        <h2>Unauthorized</h2>
+      )}
+      {!currentUser && <Navigate to="/project/signin" />}
     </div>
   );
 }
