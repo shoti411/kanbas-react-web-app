@@ -29,7 +29,7 @@ function Account() {
         navigate("/project/signin");
     };
     const updateUser = async () => {
-        await client.updateUser(user._id, user);
+        await client.updateUser(user);
     };
 
     const fetchFollowers = async (userId) => {

@@ -9,7 +9,7 @@ function Nav() {
 
     useEffect(() => {
 
-    }, [])
+    }, [currentUser])
     return (
         <div className="container p-navback">
             <nav className="navbar navbar-light mt-2 d-flex container-fluid p-nav">
@@ -43,7 +43,7 @@ function Nav() {
                 )}
                 {currentUser && (
                     <>
-                        {currentUser.role === "ADMIN" && (
+                        {((currentUser.role === "MANAGER") || (currentUser.role === "ADMIN")) && (
                             <div className={`nav-item ${pathname.includes("users") ? "active" : ""}`}>
                                 <Link to="/project/users"
                                     className={`nav-link ${pathname.includes("users") ? "active" : ""}`}>Users</Link>
@@ -53,7 +53,7 @@ function Nav() {
                             <Link to="/project/account"
                                 className={`nav-link ${pathname.includes("account") ? "active" : ""}`}>Account</Link>
                         </div>
-                        
+
                     </>
                 )}
             </nav>

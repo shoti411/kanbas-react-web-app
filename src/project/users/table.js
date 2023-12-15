@@ -59,7 +59,7 @@ function UserTable() {
   }, []);
   return (
     <div className="container">
-      {currentUser && currentUser.role === "ADMIN" && (<div>
+      {currentUser && ((currentUser.role !== "MANAGER") || (currentUser.role !== "ADMIN")) && (<div>
         <h1>User List</h1>
         <table className="table p-table">
           <thead>

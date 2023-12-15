@@ -116,12 +116,12 @@ function UserDetails() {
                         value={user?.username}
                         className="form-control"
                     /></label>
-                <button className="btn btn-outline-success float-end" onClick={() => client.updateUser(user._id, user)}>
+                <button className="btn btn-outline-success float-end" onClick={() => client.updateUser(user)}>
                         Save
                     </button>
                 </div>
             )}
-            {currentUser?.role !== "ADMIN" && <><label>Username: {user?.username}</label></>}
+            {currentUser?.role !== "ADMIN" && (<div><label className="p-ud-text"><h3>Username: {user?.username}</h3></label></div>)}
             {((currentUser?.role === "ADMIN") || (currentUser?.role === "MANAGER")) && (
                 <div className="">
                     <label className="p-ud-text"><h3>Role: {user?.role}</h3></label>
