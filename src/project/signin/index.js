@@ -5,8 +5,18 @@ function Signin() {
   const [credentials, setCredentials] = useState({ username: "", password: "" });
   const navigate = useNavigate();
   const signin = async () => {
-    await client.signin(credentials);
-    navigate("/project/account");
+    try {
+      await client.signin(credentials);
+      navigate("/project/account");
+    } catch (error) {
+      console.log(error);
+      return (
+      <div className="container">
+        {error}
+      </div>
+      )
+    }
+
   };
   return (
     <div className="container">

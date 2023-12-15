@@ -51,6 +51,7 @@ function UserDetails() {
     //   const user = await client.account();
     //   setCurrentUser(user);
     // };
+    
     const follow = async () => {
         await followsClient.createUserFollowsUser(currentUser._id, user._id);
     };
@@ -79,7 +80,7 @@ function UserDetails() {
         <div className="container">
             {!currentUser && (
                 <div className="">
-                    <h2>Sign In to see other users!</h2>
+                    <h2>You need to sign in to see other users!</h2>
                 </div>
             )}
             <div></div>
@@ -99,25 +100,33 @@ function UserDetails() {
             {currentUser && (
                 <>
                     <h1>User Details</h1>
-                    <label className="p-ud-text"><h3>First name: {user.firstName}</h3></label>
+                    <label className="p-ud-text"><h3>First name: {user?.firstName}</h3></label>
                     <div></div>
-                    <label className="p-ud-text"><h3>Last name: {user.lastName}</h3> </label>
+                    <label className="p-ud-text"><h3>Last name: {user?.lastName}</h3> </label>
                 </>
             )}
             {currentUser?.role === "ADMIN" && (
-                <>
+                <div>
+                
+
+                    <label className="p-ud-text"><h3>Username: </h3>
                     <input
                         onChange={(e) => setUser({ ...user, username: e.target.value })}
                         type="text"
                         value={user?.username}
                         className="form-control"
-                    />
-                    <button className="btn btn-outline-success" onClick={() => client.updateUser(user._id, user)}>
+                    /></label>
+                <button className="btn btn-outline-success float-end" onClick={() => client.updateUser(user._id, user)}>
                         Save
                     </button>
-                </>
+                </div>
             )}
             {currentUser?.role !== "ADMIN" && <><label>Username: {user?.username}</label></>}
+            {((currentUser?.role === "ADMIN") || (currentUser?.role === "MANAGER")) && (
+                <div className="">
+                    <label className="p-ud-text"><h3>Role: {user?.role}</h3></label>
+                </div>
+            )}
             {/* <pre>{JSON.stringify(user, null, 2)}</pre>
       <pre>{JSON.stringify(currentUser, null, 2)}</pre> */}
             <h2>Followers</h2>

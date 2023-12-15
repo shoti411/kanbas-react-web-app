@@ -53,69 +53,79 @@ function UserTable() {
     setUsers(users);
   };
 
-  useEffect(() => { 
+  useEffect(() => {
     fetchUsers();
     fetchUser();
   }, []);
   return (
     <div className="container">
       {currentUser && currentUser.role === "ADMIN" && (<div>
-      <h1>User List</h1>
-      <table className="table p-table">
-        <thead>
-          <tr>
-            <td>
-              <input value={user.username} placeholder="username" onChange={(e) => setUser({ ...user, username: e.target.value })} />
-            </td>
-            <td>
-              <input value={user.password} placeholder="password" onChange={(e) => setUser({ ...user, password: e.target.value })} />
-            </td>
-            <td>
-              <input value={user.firstName} placeholder="first name" onChange={(e) => setUser({ ...user, firstName: e.target.value })} />
-            </td>
-            <td>
-              <input value={user.lastName} placeholder="last name" onChange={(e) => setUser({ ...user, lastName: e.target.value })} />
-            </td>
-            <td>
-              <select value={user.role} onChange={(e) => setUser({ ...user, role: e.target.value })}>
-                <option value="USER">User</option>
-                <option value="ADMIN">Admin</option>
-                <option value="MANAGER">Manager</option>
-                <option value="COMPANY">Company</option>
-              </select>
-            </td>
-            <td className="text-nowrap">
-              <BsFillCheckCircleFill onClick={updateUser}
-                className="me-2 text-success fs-1 text" />
-              <BsPlusCircleFill onClick={createUser}
-                className="text-success fs-1 text" />
-            </td>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map((user) => (
-            <tr key={user._id}>
-              <td>        
-              <Link to={`/project/users/${user._id}`}>
-                {user.username}
-              </Link>
-              </td>
-              <td>{user.firstName}</td>
-              <td>{user.lastName}</td>
-              <td className="text-nowrap">
-                <button className="btn btn-warning me-2">
-                  <BsPencil onClick={() => selectUser(user)} />
-                </button>
-                <button className="btn btn-danger me-2">
-                  <BsTrash3Fill onClick={() => deleteUser(user)} />
-                </button>
-              </td>
-            </tr>))}
-        </tbody>
-      </table>
+        <h1>User List</h1>
+        <table className="table p-table">
+          <thead>
+            {currentUser?.role === "ADMIN" && (
+              <>
+                <tr>
+                  <td>
+                    <input value={user.username} placeholder="username" onChange={(e) => setUser({ ...user, username: e.target.value })} />
+                  </td>
+                  <td>
+                    <input value={user.firstName} placeholder="first name" onChange={(e) => setUser({ ...user, firstName: e.target.value })} />
+                  </td>
+                  <td>
+                    <input value={user.lastName} placeholder="last name" onChange={(e) => setUser({ ...user, lastName: e.target.value })} />
+                  </td>
+                  <td>
+                    <input value={user.password} placeholder="password" onChange={(e) => setUser({ ...user, password: e.target.value })} />
+                  </td>
+                  <td>
+                    <select value={user.role} onChange={(e) => setUser({ ...user, role: e.target.value })}>
+                      <option value="USER">User</option>
+                      <option value="ADMIN">Admin</option>
+                      <option value="MANAGER">Manager</option>
+                      <option value="COMPANY">Company</option>
+                    </select>
+                  </td>
+                  <td className="text-nowrap">
+                    <BsFillCheckCircleFill onClick={updateUser}
+                      className="me-2 text-success fs-1 text" />
+                    <BsPlusCircleFill onClick={createUser}
+                      className="text-success fs-1 text" />
+                  </td>
+                </tr>
+              </>
+            )}
+          </thead>
+          <tbody>
+            {users.map((user) => (
+              <tr key={user._id}>
+                <td>
+                  <Link className="text-decoration-none" to={`/project/users/${user._id}`}>
+                    @{user.username}
+                  </Link>
+                </td>
+                <td>{user.firstName}</td>
+                <td>{user.lastName}</td>
+                {currentUser?.role === "ADMIN" && (
+                  <td className="text-nowrap">
+                  <button className="btn btn-warning me-2">
+                    <BsPencil onClick={() => selectUser(user)} />
+                  </button>
+                  <button className="btn btn-danger me-2">
+                    <BsTrash3Fill onClick={() => deleteUser(user)} />
+                  </button>
+                </td>
+                )}
+              </tr>))}
+          </tbody>
+        </table>
       </div>)}
-      {currentUser && currentUser.role !== "ADMIN" && (
-        <h2>Unauthorized</h2>
+      {currentUser && (currentUser.role !== "MANAGER") && (currentUser.role !== "ADMIN") && (
+        <>
+          <h2>Unauthorized</h2>
+          <div></div>
+          <h3>You must be a Manager or Admin to access this list!</h3>
+        </>
       )}
       {/* {!currentUser && <Navigate to="/project/signin" />} */}
     </div>
