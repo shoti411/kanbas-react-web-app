@@ -8,6 +8,7 @@ function Account() {
     const [account, setAccount] = useState(null);
     const [likes, setLikes] = useState([]);
     const [followers, setFollowers] = useState([]);
+    const [followed, setFollowed] = useState([]);
     const findUserById = async (id) => {
         const user = await client.findUserById(id);
         setAccount(user);
@@ -46,15 +47,22 @@ function Account() {
         setFollowers(followers);
     }
 
+    const fetchFollowed = async () => {
+        const followed = await followsClient.findFollowedUsersOfUser(id);
+        setFollowed(followed);
+    }
+
 
 
     useEffect(() => {
         if (id) {
             findUserById(id);
             fetchFollowers();
+            fetchFollowed();
         } else {
             fetchAccount();
         }
+
     }, [id]);
 
     return (
@@ -70,10 +78,24 @@ function Account() {
                     </div>
                 )}
                 {account && (
-                    <div>
-                        <div className="float-end">
-                            <button onClick={followUser} className="btn btn-success">Follow</button>
-                        </div>
+                    <div className="container">
+                        {/* if no id in params or account._id is id in params then show follow button */
+                            
+                        }
+                        {id && (
+                            <>
+                                {(id === account._id) && (
+                                    <>
+                                    {console.log(id === account._id)}
+                                        <div className="float-end">
+                                            <button onClick={followUser} className="btn btn-success">Follow</button>
+                                        </div>
+                                    </>
+                                )}
+
+                            </>
+                        )}
+
                         <label className="">
                             First Name:
                             <input className="form-control" value={account.firstName}
@@ -127,7 +149,7 @@ function Account() {
                             </select>
                         </label>
                         <div></div>
-                        
+
                         <label className="">
                             Username:
                             <input className="form-control" value={account.username}

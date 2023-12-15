@@ -36,4 +36,5 @@ export const findFollowersOfUser = async (userId) => {
 
 export const findFollowedUsersOfUser = async (userId) => {
     const response = await client.get(`/${userId}/following`);
+    return response.data;
 }
