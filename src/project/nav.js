@@ -10,8 +10,8 @@ function Nav() {
         <nav className="nav nav-tabs mt-2 d-flex container-fluid">
             <Link to="/project/home"
                 className={`nav-link ${pathname.includes("home") ? "active" : ""}`}>Home</Link>
-            <Link to="/project/profile"
-                className={`nav-link ${pathname.includes("profile") ? "active" : ""}`}>Profile</Link>
+            <Link to="/project/account"
+                className={`nav-link ${pathname.includes("account") ? "active" : ""}`}>Account</Link>
 
             
             {// if there is current user, then render this
@@ -20,8 +20,8 @@ function Nav() {
             <>
                 <Link to="/project/signup"
                     className={`nav-link ${pathname.includes("signup") ? "active" : ""}`}>Signup</Link>
-                <Link to="/project/login"
-                    className={`nav-link ${pathname.includes("login") ? "active" : ""}`}>Login</Link>
+                <Link to="/project/signin"
+                    className={`nav-link ${pathname.includes("signin") ? "active" : ""}`}>Signin</Link>
             </>
             )}
 
