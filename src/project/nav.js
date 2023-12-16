@@ -7,9 +7,9 @@ function Nav() {
     const { currentUser } = useSelector((state) => state.usersReducer); // so when user is logged in - this only gets populated until server responds
     const { pathname } = useLocation();
 
-    useEffect(() => {
+    // useEffect(() => {
 
-    }, [currentUser])
+    // }, [currentUser]);
     return (
         <div className="container p-navback fixed-top">
             <nav className="navbar navbar-light mt-2 d-flex container-fluid p-nav">
@@ -28,6 +28,13 @@ function Nav() {
                     <Link to="/project/details"
                         className={`nav-link ${pathname.includes("details") ? "active" : ""}`}>Details</Link>
                 </div> */}
+                {currentUser && (
+                    <>
+                        <div className="center">
+                            <h3> Welcome {currentUser.username} </h3>
+                        </div>
+                    </>
+                )}
                 {!currentUser && (
                     <>
                         <div className={`nav-item ${pathname.includes("signin") ? "active" : ""}`}>

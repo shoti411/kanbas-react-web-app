@@ -23,6 +23,6 @@ export const findUsersThatLikeBusiness = async (businessId) => {
     return response.data;
 };
 export const findBusinessThatUserLikes = async (userId) => {
-    const response = await request.get(`/project/api/users/${userId}/likes`);
+    const response = await request.get(`/users/${userId}/likes`);
     return response.data;
 };

@@ -1,30 +1,34 @@
 import * as client from "./../users/client.js";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { setCurrentUser } from "./../users/reducer";
+import { useDispatch } from "react-redux";
 import './../styles.css';
 function Signin() {
   const [credentials, setCredentials] = useState({ username: "", password: "" });
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const signin = async () => {
     try {
-      await client.signin(credentials);
+      const user = await client.signin(credentials);
+      dispatch(setCurrentUser(user));
       navigate("/project/account");
     } catch (error) {
-      console.log(error);
-      return (
-      <div className="container">
-        {/* {error} */}
-        <h6 className="red">Incorrect Username Or Password</h6>
-      </div>
-      )
+      setError(error.message);
     }
 
   };
   return (
     <div className="container p-page">
       <h1>Signin</h1>
-      <input className="form-control" placeholder="username" value={credentials.username} onChange={(e) => setCredentials({...credentials, username: e.target.value})}/>
-      <input className="form-control" placeholder="password" value={credentials.password} onChange={(e) => setCredentials({...credentials, password: e.target.value})}/>
+      {error && (
+        <div className="container">
+          <h6 className="red">{error}</h6>
+        </div>
+      )}
+      <input className="form-control" placeholder="username" value={credentials.username} onChange={(e) => setCredentials({ ...credentials, username: e.target.value })} />
+      <input className="form-control" placeholder="password" value={credentials.password} onChange={(e) => setCredentials({ ...credentials, password: e.target.value })} />
       <button className="btn btn-primary" onClick={signin}> Signin </button>
 
       <h3>Or <Link className="btn btn-secondary" to="/project/signup">Signup</Link></h3>

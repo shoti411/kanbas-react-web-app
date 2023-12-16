@@ -32,6 +32,7 @@ import * as client from "./client";
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import * as followsClient from "../follows/client";
+import * as likesClient from "../likes/client";
 import { useSelector } from "react-redux";
 import './details.css';
 import './../styles.css';
@@ -41,12 +42,14 @@ function UserDetails() {
     const { currentUser } = useSelector((state) => state.usersReducer); // [2
     const [followers, setFollowers] = useState([]);
     const [following, setFollowing] = useState([]);
+    const [likes, setLikes] = useState([]);
     const { id } = useParams();
     const fetchUser = async () => {
         const user = await client.findUserById(id);
         setUser(user);
         fetchFollowers(user._id);
         fetchFollowing(user._id);
+        fetchLikes(user._id);
     };
     // const fetchCurrentUser = async () => {
     //   const user = await client.account();
@@ -71,6 +74,11 @@ function UserDetails() {
         setFollowing(following);
     };
 
+    const fetchLikes = async (userId) => {
+        const likes = await likesClient.findBusinessThatUserLikes(userId);
+        setLikes(likes);
+    };
+
     const alreadyFollowing = () => {
         return followers.find(
             (follows) => follows.follower._id === currentUser._id
@@ -79,7 +87,6 @@ function UserDetails() {
 
     useEffect(() => {
         fetchUser();
-        // fetchCurrentUser();
     }, [id]);
     return (
         <div className="container p-page">
@@ -158,8 +165,23 @@ function UserDetails() {
                         {follows.followed.firstName} {follows.followed.lastName} (@
                         {follows.followed.username})
                     </Link>
+                    
                 ))}
+                
+                <h3>Liked Businesses</h3>
+                        <div className="list-group">
+                            {likes.map((like) => (
+                                <Link
+                                    to={`/project/details/${like.businessId}`}
+                                    key={like._id}
+                                    className="list-group-item"
+                                >
+                                    {like.businessId}
+                                </Link>
+                            ))}
+                        </div>
             </div>
+            
         </div>
     );
 }

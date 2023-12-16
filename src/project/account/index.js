@@ -2,6 +2,7 @@ import * as client from "./../users/client";
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import * as followsClient from "./../follows/client";
+import * as likesClient from "./../likes/client";
 import { setCurrentUser } from "./../users/reducer";
 import { useDispatch } from "react-redux";
 import './../styles.css';
@@ -11,6 +12,7 @@ function Account() {
     const [user, setUser] = useState(null);
     const [followers, setFollowers] = useState([]);
     const [following, setFollowing] = useState([]);
+    const [likes, setLikes] = useState([]);
     const dispatch = useDispatch();
 
     const navigate = useNavigate();
@@ -20,6 +22,7 @@ function Account() {
             setUser(user);
             fetchFollowers(user._id);
             fetchFollowing(user._id);
+            fetchLikes(user._id);
         } catch (error) {
             navigate("/project/signin");
         }
@@ -43,6 +46,10 @@ function Account() {
         setFollowing(following);
     };
 
+    const fetchLikes = async (userId) => {
+        const likes = await likesClient.findBusinessThatUserLikes(userId);
+        setLikes(likes);
+    };
     useState(() => {
         fetchUser();
     }, []);
@@ -172,6 +179,19 @@ function Account() {
                                     </Link>
                                 ))}
                             </div>
+                        </div>
+
+                        <h3>Liked Businesses</h3>
+                        <div className="list-group">
+                            {likes.map((like) => (
+                                <Link
+                                    to={`/project/details/${like.businessId}`}
+                                    key={like._id}
+                                    className="list-group-item"
+                                >
+                                    {like.businessName}
+                                </Link>
+                            ))}
                         </div>
                     </div>
 
