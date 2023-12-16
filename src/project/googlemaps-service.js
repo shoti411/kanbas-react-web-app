@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
-export const GOOGLE_MAPS_API = "https://maps.googleapis.com/maps/api/place/textsearch"
+export const GOOGLE_MAPS_API = "https://maps.googleapis.com/maps/api/place"
 
 // const request = axios.create({
 //   withCredentials: true,
@@ -28,7 +28,7 @@ export const fullTextSearch = async (text) => {
   // });
     
   const response = await axios.get(
-    `${GOOGLE_MAPS_API}/json?query=${text}&key=${KEY}`);
+    `${GOOGLE_MAPS_API}/textsearch/json?query=${text}&key=${KEY}`);
     // .then((response) => {
     //   alert();
     // })
@@ -38,12 +38,11 @@ export const fullTextSearch = async (text) => {
   return response.data;
 };
 
-// export const fetchAlbumById = async (businessId) => {
-//   const response = await axios.get(
-//     `${YELP_API}/businesses/search/${businessId}?apikey=${KEY}`
-//   );
-//   return response;
-// };
+export const findBusinessById = async (businessId) => {
+  const response = await axios.get(
+    `${GOOGLE_MAPS_API}/details/json?place_id=${businessId}&key=${KEY}`);
+  return response.data.result;
+};
 
 // export const fetchTracksByAlbumId = async (businessId) => {
 //   const response = await axios.get(

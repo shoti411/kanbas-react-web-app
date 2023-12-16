@@ -39,9 +39,9 @@ function Project() {
                         <Route path="/users/:id" element={<UserDetails />} />
                         <Route path="/admin/users" element={<UserTable />} />
                         {/* <Route path="profile/*" element={<Profile />} /> */}
-                        <Route path="signup/*" element={<Signup />} />
-                        <Route path="search/*" element={<Search />} />
-                        <Route path="details/*" element={<Details />} />
+                        {/* <Route path="signup/*" element={<Signup />} /> */}
+                        <Route path="/search" element={<Search />} />
+                        <Route path="/details/:businessId" element={<Details />} />
                         <Route
                             path="/users"
                             element={

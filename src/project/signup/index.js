@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as client from "./../users/client.js";
+import './../styles.css';
 function Signup() {
   const [error, setError] = useState("");
   const [credentials, setCredentials] = useState({
@@ -15,7 +16,7 @@ function Signup() {
     }
   };
   return (
-    <div className="container">
+    <div className="container p-page">
       <h1>Signup</h1>
       {error && <div>{error}</div>}
       <input

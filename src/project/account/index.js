@@ -4,6 +4,7 @@ import { useNavigate, Link } from "react-router-dom";
 import * as followsClient from "./../follows/client";
 import { setCurrentUser } from "./../users/reducer";
 import { useDispatch } from "react-redux";
+import './../styles.css';
 // import Following from "../follows/index.js";
 // import * as likesClient from "../"
 function Account() {
@@ -47,7 +48,7 @@ function Account() {
     }, []);
 
     return (
-        <div className="container-fluid container">
+        <div className="container-fluid container p-page">
             <h1>Account</h1>
             <div className="container-fluid">
                 {/* {JSON.stringify(account, null, 2)} */}

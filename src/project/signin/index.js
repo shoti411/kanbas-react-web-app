@@ -1,6 +1,7 @@
 import * as client from "./../users/client.js";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import './../styles.css';
 function Signin() {
   const [credentials, setCredentials] = useState({ username: "", password: "" });
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ function Signin() {
 
   };
   return (
-    <div className="container">
+    <div className="container p-page">
       <h1>Signin</h1>
       <input className="form-control" placeholder="username" value={credentials.username} onChange={(e) => setCredentials({...credentials, username: e.target.value})}/>
       <input className="form-control" placeholder="password" value={credentials.password} onChange={(e) => setCredentials({...credentials, password: e.target.value})}/>

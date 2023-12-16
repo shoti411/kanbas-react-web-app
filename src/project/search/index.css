@@ -1,0 +1,9 @@
+.pw-card-imgs {
+    width: 100%;
+    height: 15vw;
+    object-fit: contain;
+}
+
+.pw-cards {
+    align-items: stretch;
+}

@@ -24,10 +24,10 @@ function Nav() {
                     <Link to="/project/search"
                         className={`nav-link ${pathname.includes("search") ? "active" : ""}`}>Search</Link>
                 </div>
-                <div className={`nav-item ${pathname.includes("details") ? "active" : ""}`}>
+                {/* <div className={`nav-item ${pathname.includes("details") ? "active" : ""}`}>
                     <Link to="/project/details"
                         className={`nav-link ${pathname.includes("details") ? "active" : ""}`}>Details</Link>
-                </div>
+                </div> */}
                 {!currentUser && (
                     <>
                         <div className={`nav-item ${pathname.includes("signin") ? "active" : ""}`}>
