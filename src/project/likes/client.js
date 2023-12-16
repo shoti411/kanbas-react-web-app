@@ -11,6 +11,7 @@ const request = axios.create({
 export const findAllLikes = async () => {};
 export const createUserLikesBusiness = async (userId, businessId) => {
     const response = await request.post(`/users/${userId}/likes/${businessId}`);
+    console.log(businessId);
     return response.data;
 };
 export const deleteUserLikesBusiness = async (userId, businessId) => {
@@ -18,8 +19,10 @@ export const deleteUserLikesBusiness = async (userId, businessId) => {
     return response.data;
 };
 export const findUsersThatLikeBusiness = async (businessId) => {
-
+    const response = await request.get(`/likes/${businessId}/users`);
+    return response.data;
 };
 export const findBusinessThatUserLikes = async (userId) => {
-
+    const response = await request.get(`/project/api/users/${userId}/likes`);
+    return response.data;
 };

@@ -13,7 +13,8 @@ function Signin() {
       console.log(error);
       return (
       <div className="container">
-        {error}
+        {/* {error} */}
+        <h6 className="red">Incorrect Username Or Password</h6>
       </div>
       )
     }

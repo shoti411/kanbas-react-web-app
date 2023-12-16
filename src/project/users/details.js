@@ -34,6 +34,7 @@ import { Link, useParams } from "react-router-dom";
 import * as followsClient from "../follows/client";
 import { useSelector } from "react-redux";
 import './details.css';
+import './../styles.css';
 function UserDetails() {
     const [user, setUser] = useState(null);
     // const [currentUser, setCurrentUser] = useState(null); // [1
@@ -56,6 +57,10 @@ function UserDetails() {
         await followsClient.createUserFollowsUser(currentUser._id, user._id);
     };
 
+    const unfollow = async () => {
+        await followsClient.deleteUserFollowsUser(currentUser._id, user._id);
+    }
+
     const fetchFollowers = async (userId) => {
         const followers = await followsClient.findFollowersOfUser(userId);
         setFollowers(followers);
@@ -77,7 +82,7 @@ function UserDetails() {
         // fetchCurrentUser();
     }, [id]);
     return (
-        <div className="container">
+        <div className="container p-page">
             {!currentUser && (
                 <div className="">
                     <h2>You need to sign in to see other users!</h2>
@@ -88,7 +93,7 @@ function UserDetails() {
             {currentUser?._id !== id && (
                 <>
                     {alreadyFollowing() ? (
-                        <button className="btn btn-danger float-end">Unfollow</button>
+                        <button className="btn btn-danger float-end" onClick={unfollow}>Unfollow</button>
                     ) : (
                         <button onClick={follow} className="btn btn-primary float-end">
                             Follow

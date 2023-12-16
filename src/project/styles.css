@@ -1,7 +1,15 @@
 .p-page {
-    padding-top: 60px;
+    padding-top: 70px;
 }
 
 .p-button-pad-up {
     padding-top: 10px;
+}
+
+.green {
+    color:green;
+}
+
+.red {
+    color: red;
 }
