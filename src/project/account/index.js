@@ -189,7 +189,7 @@ function Account() {
                                     key={like._id}
                                     className="list-group-item"
                                 >
-                                    {like.businessName}
+                                    {like.businessId}
                                 </Link>
                             ))}
                         </div>

@@ -51,7 +51,7 @@ function Details() {
 
     const alreadyLiked = () => {
         return likes.find(
-            (like) => like._id === currentUser._id
+            (like) => like.user._id === currentUser._id
         );
     };
 
@@ -60,7 +60,7 @@ function Details() {
         fetchBusiness();
         fetchLikes();
 
-    }, [businessId]);
+    }, [businessId, likes]);
     return (
         <div className="container p-page">
             {business && (
@@ -121,10 +121,10 @@ function Details() {
                                 <ul className="list-group">
                                     {likes.map((like, index) => (
                                         <Link
-                                            key={like._id}
+                                            key={index}
                                             className="list-group-item"
-                                            to={`/project/users/${like.user._id}`}>
-                                            (@ {like.user.username})
+                                            to={`/project/users/${like?.user?._id}`}>
+                                            (@ {like?.user?.username})
                                             </Link>
                                     ))}
                                 </ul>

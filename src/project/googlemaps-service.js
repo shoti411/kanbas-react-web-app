@@ -44,6 +44,16 @@ export const findBusinessById = async (businessId) => {
   return response.data.result;
 };
 
+export const findBusinessByLocation = async (phoneNumber) => {
+  const response = await axios.get(
+    `https://maps.googleapis.com/maps/api/place/findplacefromtext/json
+    ?input=%2B${phoneNumber}
+    &inputtype=phonenumber
+    &key=${KEY}`
+  );
+  return response.data.result;
+}
+
 // export const fetchTracksByAlbumId = async (businessId) => {
 //   const response = await axios.get(
 //     `${YELP_API}/businesses/search/${businessId}?apikey=${KEY}`
