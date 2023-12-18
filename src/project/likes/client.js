@@ -1,5 +1,7 @@
 import axios from "axios";
-const LIKES_API = "http://localhost:4000/project/api/";
+// const LIKES_API = "http://localhost:4000/project/api";
+const BASE_API = process.env.REACT_APP_BASE_API_URL;
+const LIKES_API = `${BASE_API}/project/api`;
 
 const request = axios.create({
     withCredentials: true,

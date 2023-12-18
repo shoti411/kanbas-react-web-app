@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const FOLLOWS_API = "http://localhost:4000/project/api/users";
+// const FOLLOWS_API = "http://localhost:4000/project/api/users";
+const BASE_API = process.env.REACT_APP_BASE_API_URL;
+const FOLLOWS_API = `${BASE_API}/project/api/users`
 
 const client = axios.create({
     withCredentials: true,
