@@ -55,7 +55,7 @@ function UserDetails() {
     //   const user = await client.account();
     //   setCurrentUser(user);
     // };
-    
+
     const follow = async () => {
         await followsClient.createUserFollowsUser(currentUser._id, user._id);
     };
@@ -108,7 +108,7 @@ function UserDetails() {
                     )}
                 </>
             )}
-            
+
             {currentUser && (
                 <>
                     <h1>User Details</h1>
@@ -119,16 +119,16 @@ function UserDetails() {
             )}
             {currentUser?.role === "ADMIN" && (
                 <div>
-                
+
 
                     <label className="p-ud-text"><h3>Username: </h3>
-                    <input
-                        onChange={(e) => setUser({ ...user, username: e.target.value })}
-                        type="text"
-                        value={user?.username}
-                        className="form-control"
-                    /></label>
-                <button className="btn btn-outline-success float-end" onClick={() => client.updateUser(user)}>
+                        <input
+                            onChange={(e) => setUser({ ...user, username: e.target.value })}
+                            type="text"
+                            value={user?.username}
+                            className="form-control"
+                        /></label>
+                    <button className="btn btn-outline-success float-end" onClick={() => client.updateUser(user)}>
                         Save
                     </button>
                 </div>
@@ -165,23 +165,23 @@ function UserDetails() {
                         {follows.followed.firstName} {follows.followed.lastName} (@
                         {follows.followed.username})
                     </Link>
-                    
+
                 ))}
-                
+
                 <h3>Liked Businesses</h3>
-                        <div className="list-group">
-                            {likes.map((like) => (
-                                <Link
-                                    to={`/project/details/${like.businessId}`}
-                                    key={like._id}
-                                    className="list-group-item"
-                                >
-                                    {like.businessId}
-                                </Link>
-                            ))}
-                        </div>
+                <div className="list-group">
+                    {likes.map((like) => (
+                        <Link
+                            to={`/project/details/${like.businessId}`}
+                            key={like._id}
+                            className="list-group-item"
+                        >
+                            {like.businessId}
+                        </Link>
+                    ))}
+                </div>
             </div>
-            
+
         </div>
     );
 }

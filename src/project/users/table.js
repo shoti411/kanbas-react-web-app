@@ -12,6 +12,10 @@ function UserTable() {
     const user = await client.account();
     setCurrentUser(user);
   }
+  const fetchUsers = async () => {
+    const users = await client.findAllUsers();
+    setUsers(users);
+  };
 
   const selectUser = async (user) => {
     try {
@@ -48,10 +52,7 @@ function UserTable() {
   };
 
 
-  const fetchUsers = async () => {
-    const users = await client.findAllUsers();
-    setUsers(users);
-  };
+
 
   useEffect(() => {
     fetchUsers();
